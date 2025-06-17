@@ -8,15 +8,16 @@ This project is an authentication system boilerplate using Auth.js (NextAuth) on
 - NextAuth 5.0.0-beta
 - ReactJS 19
 - Tailwind 3.4.17
-- Wrangler 4.16.1
+- Wrangler 4.20.1
 
 ## Features
 
 - User authentication storage using Cloudflare D1 database
-- Email authentication using Resend
+- Email authentication(magic link) using Resend
+- Apple, Google Authentication
 - Cloudflare deployment optimization with Open NextJS
-- TypeScript support
 - Responsive UI (Tailwind CSS)
+- TypeScript support
 
 ## Installation
 
@@ -112,6 +113,20 @@ cloudflare-authjs-sample/
 4. Push to your forked repository: `git push origin feature/your-feature-name`
 5. Submit a Pull Request.
 
+## Authentication
+
+### Resend Magic Link
+
+You can only send testing emails to your own email address. To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.
+
+## D1 Local Development
+
+Calling `GET /api/setup` produces `.wrangler/state/v3/d1/miniflare-D1DatabaseObject`
+
 ## License
 
 This project is distributed under the MIT License.
+
+This project builds based on https://github.com/mackenly/auth-js-d1-example.
+
+Reference: https://developers.cloudflare.com/developer-spotlight/tutorials/fullstack-authentication-with-next-js-and-cloudflare-d1/#1-create-a-nextjs-app-using-workers

@@ -18,8 +18,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "cf-worker-authjs-boilerplate",
-      "database_id": "<DATABASE_ID>",
+      "database_name": "cf-worker-authjs-boilerplate-database",
+      "database_id": "0e208d06-70d0-4ecf-8d65-16fd47e3ebbc",
     }
   ],
   // "routes": [
