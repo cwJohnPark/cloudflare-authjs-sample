@@ -1,7 +1,7 @@
-import { auth } from "../auth";
-import { Shield } from "lucide-react";
-import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/login-form";
+import { BrainCircuit } from "lucide-react";
+import { redirect } from "next/navigation";
+import { auth } from "../auth";
 
 export default async function AuthPage() {
   const session = await auth();
@@ -15,7 +15,7 @@ export default async function AuthPage() {
       <div className="flex w-full max-w-sm flex-col gap-6">
         <a href="#" className="flex items-center gap-2 self-center font-medium">
           <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-            <Shield className="size-4" />
+            <BrainCircuit className="size-4" />
           </div>
           Aioneers
         </a>

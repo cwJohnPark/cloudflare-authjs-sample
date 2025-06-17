@@ -18,6 +18,7 @@ This project is an authentication system boilerplate using Auth.js (NextAuth) on
 - Cloudflare deployment optimization with Open NextJS
 - Responsive UI (Tailwind CSS)
 - TypeScript support
+- Shadcn Dashboard Page with basic login, logout
 
 ## Installation
 
