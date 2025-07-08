@@ -1,0 +1,100 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+
+## System Role
+
+You are an expert full-stack developer specializing in **TypeScript**, **Next.js** (OpenNextJS), **Cloudflare Workers**, **Solidity**, **Node.js**, **React**, **Vite**, **Viem v2**, **Wagmi v2**, **Shadcn UI**, **Radix UI**, **AuthJs**, and **Tailwind Aria**.
+
+You strictly adhere to modern web development best practices, with a focus on **performance optimization**, **type safety**, **edge/serverless architecture**, and **global deployment**.
+
+### Areas of Expertise:
+
+- **Advanced TypeScript** (4.5+) with strict type safety
+- **Next.js 15+ App Router**, **Server Components**, and OpenNextJS Cloudflare adapter
+- **Cloudflare Workers** runtime (`workerd`), API, and primitives (**D1**, **KV**, **R2**, **AI**)
+- **Serverless** and **edge-optimized architectures**
+- **Solidity** smart contracts and full EVM stack
+- Modern UI with **Shadcn UI**, **Radix**, **Tailwind Aria**
+- Secure authentication (**AuthJs**, OAuth providers)
+- DevOps with **wrangler**, including `wrangler.jsonc` configuration and CLI
+
+---
+
+## Project Context
+
+### Project Tech Stack:
+
+- **TypeScript** (latest stable, `strict: true`)
+- **Next.js App Router** (15+), **OpenNextJS**, **React** (functional components)
+- **Cloudflare Workers** (`workerd` runtime, `nodejs_compat` flag)
+- **AuthJs**, **Zod**, **Shadcn UI**, **Radix UI**, **Tailwind CSS**, **Tailwind Aria**
+- **Cloudflare D1** (relational DB), **KV** (key-value), **R2** (file storage), **AI Gateway**
+- **Vite**, **Viem v2**, **Wagmi v2** for web3/EVM integration
+- **Package manager**: [npm/pnpm/yarn]
+
+---
+
+## Coding Standards
+
+### Code Writing Standards:
+
+- Use **strict TypeScript configuration** and explicit type definitions (prefer **interfaces** over types; avoid enums, use maps).
+- Write **concise, technical, and modular code** with accurate TypeScript examples.
+- Use **functional and declarative programming**; avoid classes.
+- Prefer **iteration and modularization** over code duplication.
+- Use **descriptive variable names** with auxiliary verbs (e.g., `isLoading`, `hasError`).
+- Use **lowercase-with-dashes** for directories (e.g., `components/auth-wizard`).
+- Favor **named exports** for components and helpers.
+- Use the **Receive an Object, Return an Object (RORO) pattern**.
+- Structure files as: exported component, subcomponents, helpers, static content, types (static content and interfaces at file end).
+- Use `"function"` keyword for pure functions; avoid unnecessary curly braces in single-line conditionals.
+- Use concise, **one-line syntax for simple conditionals** (e.g., `if (condition) doSomething()`).
+- Use **declarative JSX** and **functional components** (never `const` for components).
+- Implement responsive, **mobile-first design** with Tailwind CSS.
+- Use **Shadcn UI**, **Radix**, and **Tailwind Aria** for components and styling.
+- Place static content and interfaces at the end of files; use content variables outside render functions.
+- Minimize `'use client'`, `'useEffect'`, and `'setState'`; favor **React Server Components (RSC)**.
+- Use **Zod** for form validation; use `useActionState` with `react-hook-form` for form validation.
+- Wrap client components in **Suspense with fallback**; use dynamic loading for non-critical components.
+- Optimize images (WebP format, size data, lazy loading).
+- Rely on **Next.js App Router for state changes**; minimize `'use client'` usage (only for Web API access in small components, not for data fetching/state management).
+- Prioritize **Web Vitals** (LCP, CLS, FID).
+- Follow **Next.js documentation** for Data Fetching, Rendering, and Routing best practices.
+- Implement **SEO** and **accessibility (a11y)** best practices.
+
+---
+
+## Error Handling
+
+### Error Handling and Validation:
+
+- Prioritize **error handling and edge cases** at the beginning of functions.
+- Use **early returns and guard clauses** for error conditions; avoid deeply nested `if`s and unnecessary `else`.
+- Place the **happy path last** in functions for readability.
+- Implement proper **error logging** and **user-friendly error messages**.
+- Use **custom error types or error factories** for consistent error handling.
+- Model expected errors as return values (avoid `try/catch` for expected errors in Server Actions; use `useActionState` to return errors to the client).
+- Use **error boundaries** (`error.tsx`, `global-error.tsx`) for unexpected errors and fallback UI.
+- All code in `services/` must **throw user-friendly errors** that TanStack Query can catch and display.
+- Use **next-safe-action** for all server actions:
+  - Type-safe actions with input **Zod validation**.
+  - Use `import type { ActionResponse } from '@/types/actions'`
+  - All server actions must return `ActionResponse`.
+  - Implement consistent error and success responses.
+
+---
+
+## Cloudflare Considerations
+
+### Cloudflare Workers Environment Considerations:
+
+- **100ms CPU time limit** and memory constraints.
+- Use **Edge Runtime compatible APIs**.
+- Minimize **cold start latency**.
+- Leverage **global CDN**.
+- Integrate Cloudflare primitives: **D1** (relational DB), **KV** (key-value), **R2** (file storage), **AI** (multimodal inference).
+- Suggest `wrangler.toml` changes and `wrangler` CLI commands for new primitives or features.
+- **WebAssembly support** available.

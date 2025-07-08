@@ -1,0 +1,70 @@
+export type Dictionary = {
+  lang: string;
+  navigation: {
+    account: string;
+    billing: string;
+    notifications: string;
+    logout: string;
+    dashboard: string;
+    login: string;
+    signup: string;
+  };
+  auth: {
+    signIn: string;
+    signOut: string;
+    email: string;
+    password: string;
+    welcomeBack: string;
+    enterCredentials: string;
+    rememberMe: string;
+    forgotPassword: string;
+    noAccount: string;
+    createAccount: string;
+    orContinueWith: string;
+    signInWithEmail: string;
+    signInWithGoogle: string;
+    signInWithApple: string;
+    terms: string;
+    termsOfService: string;
+    and: string;
+    privacyPolicy: string;
+  };
+  dashboard: {
+    title: string;
+    welcome: string;
+    overview: string;
+    analytics: string;
+    reports: string;
+    settings: string;
+    help: string;
+    search: string;
+  };
+  account: {
+    title: string;
+    profile: string;
+    security: string;
+    preferences: string;
+    personalInfo: string;
+    name: string;
+    email: string;
+    save: string;
+    cancel: string;
+    unknown: string;
+    noName: string;
+    noEmail: string;
+    connection: string;
+    connected: string;
+  };
+  common: {
+    loading: string;
+    error: string;
+    success: string;
+    submit: string;
+    close: string;
+    edit: string;
+    delete: string;
+    confirm: string;
+    language: string;
+    description: string;
+  };
+};

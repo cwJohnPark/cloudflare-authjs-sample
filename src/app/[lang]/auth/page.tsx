@@ -1,13 +1,20 @@
-import { LoginForm } from "@/components/login-form";
+import { LoginForm } from "@/components/auth/login-form";
 import { BrainCircuit } from "lucide-react";
 import { redirect } from "next/navigation";
-import { auth } from "../auth";
+import { auth } from "../../auth";
+import { getDictionary } from "../../../../lib/dictionaries";
 
-export default async function AuthPage() {
+type Props = {
+  params: Promise<{ lang: 'en' | 'ko' | 'ja' | 'es' | 'zh' }>;
+};
+
+export default async function AuthPage({ params }: Props) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
   const session = await auth();
 
   if (session) {
-    redirect("/");
+    redirect(`/${lang}`);
   }
 
   return (
@@ -19,7 +26,7 @@ export default async function AuthPage() {
           </div>
           Aioneers
         </a>
-        <LoginForm className="w-full" />
+        <LoginForm className="w-full" dict={dict} />
       </div>
     </div>
   );

@@ -1,14 +1,21 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { BrainCircuit } from "lucide-react";
-import { redirect } from "next/navigation";
-import { useSession } from "./session/provider";
+import { useRouter } from "next/navigation";
+import { Session } from "next-auth";
+import { Dictionary } from "../../lib/types";
 
-export default function Home() {
-  const session = useSession();
+type HomeClientProps = {
+  dict: Dictionary;
+  session: Session | null;
+};
+
+export function HomeClient({ dict, session }: HomeClientProps) {
+  const router = useRouter();
 
   const goto = (url: string) => {
-    redirect(url);
+    router.push(`/${dict.lang}${url}`);
   };
 
   return (
@@ -18,16 +25,16 @@ export default function Home() {
         <div className="text-2xl font-bold">Aioneers</div>
       </div>
       <div className="text-sm text-muted-foreground">
-        Aioneers is a platform for AI-powered collaboration.
+        {dict.common?.description}
       </div>
       <div className="flex flex-col items-center gap-2 md:flex-row">
         {session?.user ? (
           <Button className="w-full" onClick={() => goto("/dashboard")}>
-            Go to Dashboard Page
+            {dict.navigation?.dashboard}
           </Button>
         ) : (
           <Button className="w-full" onClick={() => goto("/auth")}>
-            Go to Login Page
+            {dict.auth?.signIn}
           </Button>
         )}
       </div>

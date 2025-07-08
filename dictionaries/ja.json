@@ -1,0 +1,70 @@
+{
+  "lang": "ja",
+  "navigation": {
+    "account": "アカウント",
+    "billing": "請求",
+    "notifications": "通知",
+    "logout": "ログアウト",
+    "dashboard": "ダッシュボード",
+    "login": "ログイン",
+    "signup": "サインアップ"
+  },
+  "auth": {
+    "signIn": "サインイン",
+    "signOut": "サインアウト",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "welcomeBack": "おかえりなさい",
+    "enterCredentials": "AppleまたはGoogleアカウントでログイン",
+    "rememberMe": "ログイン状態を保持",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "noAccount": "アカウントをお持ちでない方",
+    "createAccount": "アカウントを作成",
+    "orContinueWith": "または以下で続行",
+    "signInWithEmail": "Resendでサインイン",
+    "signInWithGoogle": "Googleでログイン",
+    "signInWithApple": "Appleでログイン",
+    "terms": "続行をクリックすると",
+    "termsOfService": "利用規約",
+    "and": "と",
+    "privacyPolicy": "プライバシーポリシー"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "welcome": "ダッシュボードへようこそ",
+    "overview": "概要",
+    "analytics": "分析",
+    "reports": "レポート",
+    "settings": "設定",
+    "help": "ヘルプ",
+    "search": "検索"
+  },
+  "account": {
+    "title": "アカウント設定",
+    "profile": "プロフィール",
+    "security": "セキュリティ",
+    "preferences": "設定",
+    "personalInfo": "個人情報",
+    "name": "名前",
+    "email": "メールアドレス",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "unknown": "不明",
+    "noName": "名前なし",
+    "noEmail": "メールアドレスなし",
+    "connection": "アカウント接続",
+    "connected": "接続済み"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "submit": "送信",
+    "close": "閉じる",
+    "edit": "編集",
+    "delete": "削除",
+    "confirm": "確認",
+    "language": "言語",
+    "description": "AioneersはAI駆動のコラボレーションプラットフォームです。"
+  }
+}

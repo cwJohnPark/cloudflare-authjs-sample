@@ -1,0 +1,70 @@
+{
+  "lang": "en",
+  "navigation": {
+    "account": "Account",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "logout": "Log out",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "signup": "Sign up"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "welcomeBack": "Welcome back",
+    "enterCredentials": "Login with your Apple or Google account",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create account",
+    "orContinueWith": "Or continue with",
+    "signInWithEmail": "Sign in with Resend",
+    "signInWithGoogle": "Login with Google",
+    "signInWithApple": "Login with Apple",
+    "terms": "By clicking continue, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your dashboard",
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "reports": "Reports",
+    "settings": "Settings",
+    "help": "Help",
+    "search": "Search"
+  },
+  "account": {
+    "title": "Account Settings",
+    "profile": "Profile",
+    "security": "Security",
+    "preferences": "Preferences",
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "save": "Save",
+    "cancel": "Cancel",
+    "unknown": "Unknown",
+    "noName": "No Name",
+    "noEmail": "No Email",
+    "connection": "Account Connection",
+    "connected": "Connected"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "language": "Language",
+    "description": "Aioneers is a platform for AI-powered collaboration."
+  }
+}

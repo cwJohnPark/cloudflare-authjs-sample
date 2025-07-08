@@ -8,12 +8,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
+import { Dictionary } from "../../../lib/types";
 
 export function LoginForm({
   className,
+  dict,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<"div"> & { dict: Dictionary }) {
   const handleGoogleLogin = async () => {
     "use server";
     await signIn("google", { redirect: true });
@@ -28,34 +30,35 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome back</CardTitle>
-          <CardDescription>
-            Login with your Apple or Google account
-          </CardDescription>
+          <CardTitle className="text-xl">{dict.auth?.welcomeBack}</CardTitle>
+          <CardDescription>{dict.auth?.enterCredentials}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-6">
             <div className="flex flex-col gap-4">
-              <AppleLoginButton onAppleLogin={handleAppleLogin} />
-              <GoogleLoginButton onGoogleLogin={handleGoogleLogin} />
+              <AppleLoginButton onAppleLogin={handleAppleLogin} dict={dict} />
+              <GoogleLoginButton
+                onGoogleLogin={handleGoogleLogin}
+                dict={dict}
+              />
             </div>
             <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
               <span className="bg-card text-muted-foreground relative z-10 px-2">
-                Or continue with
+                {dict.auth?.orContinueWith}
               </span>
             </div>
-            <EmailLoginForm />
+            <EmailLoginForm dict={dict} />
           </div>
         </CardContent>
       </Card>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
-        By clicking continue, you agree to our{" "}
+        {dict.auth?.terms || "By clicking continue, you agree to our"}{" "}
         <a href="#" className="underline">
-          Terms of Service
+          {dict.auth?.termsOfService || "Terms of Service"}
         </a>{" "}
-        and{" "}
+        {dict.auth?.and || "and"}{" "}
         <a href="#" className="underline">
-          Privacy Policy
+          {dict.auth?.privacyPolicy || "Privacy Policy"}
         </a>
         .
       </div>
@@ -63,7 +66,7 @@ export function LoginForm({
   );
 }
 
-function EmailLoginForm() {
+function EmailLoginForm({ dict }: { dict: Dictionary }) {
   return (
     <form
       action={async (formData) => {
@@ -78,7 +81,7 @@ function EmailLoginForm() {
         <Input
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder={dict.auth?.email || "Email"}
           autoCapitalize="none"
           autoComplete="email"
           autoCorrect="off"
@@ -86,13 +89,19 @@ function EmailLoginForm() {
         />
       </div>
       <Button className="w-full" type="submit">
-        Sign in with Resend
+        {dict.auth?.signInWithEmail}
       </Button>
     </form>
   );
 }
 
-function GoogleLoginButton({ onGoogleLogin }: { onGoogleLogin: () => void }) {
+function GoogleLoginButton({
+  onGoogleLogin,
+  dict,
+}: {
+  onGoogleLogin: () => void;
+  dict: Dictionary;
+}) {
   return (
     <form action={onGoogleLogin}>
       <Button variant="outline" className="w-full" type="submit">
@@ -102,13 +111,19 @@ function GoogleLoginButton({ onGoogleLogin }: { onGoogleLogin: () => void }) {
             fill="currentColor"
           />
         </svg>
-        Login with Google
+        {dict.auth?.signInWithGoogle}
       </Button>
     </form>
   );
 }
 
-function AppleLoginButton({ onAppleLogin }: { onAppleLogin: () => void }) {
+function AppleLoginButton({
+  onAppleLogin,
+  dict,
+}: {
+  onAppleLogin: () => void;
+  dict: Dictionary;
+}) {
   return (
     <form action={onAppleLogin}>
       <Button variant="outline" className="w-full" type="submit">
@@ -118,7 +133,7 @@ function AppleLoginButton({ onAppleLogin }: { onAppleLogin: () => void }) {
             fill="currentColor"
           />
         </svg>
-        Login with Apple
+        {dict.auth?.signInWithApple}
       </Button>
     </form>
   );

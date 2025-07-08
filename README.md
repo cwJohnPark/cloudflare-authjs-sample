@@ -169,4 +169,6 @@ This project is distributed under the MIT License.
 
 ## References
 
+This project was inspired by and built upon the official Cloudflare tutorial, recreated with modern implementations and additional features.
+
 - Official tutorial: https://developers.cloudflare.com/developer-spotlight/tutorials/fullstack-authentication-with-next-js-and-cloudflare-d1/

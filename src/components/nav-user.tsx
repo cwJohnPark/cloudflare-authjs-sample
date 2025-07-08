@@ -25,20 +25,30 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { Dictionary } from "../../lib/types";
 
 export function NavUser({
   user,
+  dict,
 }: {
   user: {
     name: string;
     email: string;
     avatar: string;
   };
+  dict: Dictionary;
 }) {
   const { isMobile } = useSidebar();
+  const router = useRouter();
 
   const onClickLogout = () => {
     signOut({ redirectTo: "/" });
+  };
+
+  const handleAccountClick = () => {
+    router.push(`/${dict.lang}/account`);
   };
 
   return (
@@ -85,23 +95,29 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuGroup>
+                <div className="px-2 py-1.5">
+                  <LanguageSwitcher />
+                </div>
+              </DropdownMenuGroup>
+              <DropdownMenuItem onClick={handleAccountClick}>
                 <UserCircleIcon />
-                Account
+                {dict?.navigation?.account}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCardIcon />
-                Billing
+                {dict?.navigation?.billing}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <BellIcon />
-                Notifications
+                {dict?.navigation?.notifications}
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            <DropdownMenuSeparator />
             <DropdownMenuItem onClick={onClickLogout}>
               <LogOutIcon />
-              Log out
+              {dict?.navigation?.logout}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

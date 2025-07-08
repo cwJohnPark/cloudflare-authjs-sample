@@ -1,0 +1,70 @@
+{
+  "lang": "es",
+  "navigation": {
+    "account": "Cuenta",
+    "billing": "Facturación",
+    "notifications": "Notificaciones",
+    "logout": "Cerrar sesión",
+    "dashboard": "Panel de control",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "welcomeBack": "Bienvenido de nuevo",
+    "enterCredentials": "Inicia sesión con tu cuenta de Apple o Google",
+    "rememberMe": "Recordarme",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "noAccount": "¿No tiene una cuenta?",
+    "createAccount": "Crear cuenta",
+    "orContinueWith": "O continúa con",
+    "signInWithEmail": "Iniciar sesión con Resend",
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "signInWithApple": "Iniciar sesión con Apple",
+    "terms": "Al hacer clic en continuar, aceptas nuestros",
+    "termsOfService": "Términos de servicio",
+    "and": "y",
+    "privacyPolicy": "Política de privacidad"
+  },
+  "dashboard": {
+    "title": "Panel de control",
+    "welcome": "Bienvenido a su panel de control",
+    "overview": "Resumen",
+    "analytics": "Análisis",
+    "reports": "Informes",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "search": "Buscar"
+  },
+  "account": {
+    "title": "Configuración de cuenta",
+    "profile": "Perfil",
+    "security": "Seguridad",
+    "preferences": "Preferencias",
+    "personalInfo": "Información personal",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "unknown": "Desconocido",
+    "noName": "Sin nombre",
+    "noEmail": "Sin correo electrónico",
+    "connection": "Conexión de cuenta",
+    "connected": "Conectado"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "submit": "Enviar",
+    "close": "Cerrar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "language": "Idioma",
+    "description": "Aioneers es una plataforma de colaboración impulsada por IA."
+  }
+}

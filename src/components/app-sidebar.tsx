@@ -3,19 +3,15 @@
 import {
   BarChartIcon,
   BrainCircuit,
-  CameraIcon,
   ClipboardListIcon,
   DatabaseIcon,
-  FileCodeIcon,
   FileIcon,
-  FileTextIcon,
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
   ListIcon,
   SearchIcon,
   SettingsIcon,
-  UsersIcon,
 } from "lucide-react";
 import * as React from "react";
 
@@ -23,6 +19,7 @@ import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
+import { useSession } from "@/components/session/provider";
 import {
   Sidebar,
   SidebarContent,
@@ -32,126 +29,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { useSession } from "@/app/session/provider";
+import { Dictionary } from "../../lib/types";
 
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  navMain: [
-    {
-      title: "Dashboard",
-      url: "#",
-      icon: LayoutDashboardIcon,
-    },
-    {
-      title: "Lifecycle",
-      url: "#",
-      icon: ListIcon,
-    },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: BarChartIcon,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: FolderIcon,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: UsersIcon,
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: CameraIcon,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: FileTextIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: FileCodeIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: SettingsIcon,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: HelpCircleIcon,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: SearchIcon,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: DatabaseIcon,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: ClipboardListIcon,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: FileIcon,
-    },
-  ],
+type AppSidebarProps = React.ComponentProps<typeof Sidebar> & {
+  dict: Dictionary;
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ dict, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -170,19 +54,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavMain items={getNavMain(dict)} />
+        <NavDocuments items={getNavDocuments(dict)} />
+        <NavSecondary items={getNavSecondary(dict)} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         {/* <NavUser user={data.user} /> */}
-        <SideBarSessionUser />
+        <SideBarSessionUser dict={dict} />
       </SidebarFooter>
     </Sidebar>
   );
 }
 
-function SideBarSessionUser() {
+function SideBarSessionUser({ dict }: { dict: Dictionary }) {
   const session = useSession();
   if (!session?.user) {
     return null;
@@ -195,7 +79,78 @@ function SideBarSessionUser() {
           email: session.user.email ?? "",
           avatar: session.user.image ?? "",
         }}
+        dict={dict}
       />
     </SidebarFooter>
   );
 }
+
+const getNavMain = (dict: Dictionary) => {
+  return [
+    {
+      title: dict?.dashboard?.title,
+      url: "/dashboard",
+      icon: LayoutDashboardIcon,
+    },
+    {
+      title: dict?.dashboard?.overview,
+      url: "/lifecycle",
+      icon: ListIcon,
+    },
+    {
+      title: dict?.dashboard?.analytics,
+      url: "/analytics",
+      icon: BarChartIcon,
+    },
+    {
+      title: dict?.dashboard?.reports,
+      url: "/reports",
+      icon: FolderIcon,
+    },
+    {
+      title: dict?.dashboard?.settings,
+      url: "/settings",
+      icon: SettingsIcon,
+    },
+  ];
+};
+
+const getNavDocuments = (dict: Dictionary) => {
+  return [
+    {
+      title: dict?.dashboard?.title,
+      url: "#",
+      icon: DatabaseIcon,
+    },
+    {
+      title: dict?.dashboard?.reports,
+      url: "#",
+      icon: ClipboardListIcon,
+    },
+    {
+      title: dict?.dashboard?.analytics,
+      url: "#",
+      icon: FileIcon,
+    },
+  ];
+};
+
+const getNavSecondary = (dict: Dictionary) => {
+  return [
+    {
+      title: dict?.dashboard?.settings,
+      url: "#",
+      icon: SettingsIcon,
+    },
+    {
+      title: dict?.dashboard?.help,
+      url: "#",
+      icon: HelpCircleIcon,
+    },
+    {
+      title: dict?.dashboard?.search,
+      url: "#",
+      icon: SearchIcon,
+    },
+  ];
+};
