@@ -122,6 +122,40 @@
       "functionalDescription": "These cookies enable enhanced functionality and personalization, such as remembering your preferences.",
       "gdprNotice": "Under GDPR, you have the right to control how your personal data is processed. You can change your preferences at any time.",
       "ccpaNotice": "Under CCPA, you have the right to know what personal information is collected and to request deletion of your data."
+    },
+    "policy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: December 2024",
+      "sections": {
+        "intro": {
+          "title": "Introduction",
+          "content": "At Aioneers, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services."
+        },
+        "dataCollection": {
+          "title": "Information We Collect",
+          "content": "We collect information you provide directly to us, such as when you create an account, use our services, or contact us. This may include your name, email address, and usage data."
+        },
+        "dataUsage": {
+          "title": "How We Use Your Information",
+          "content": "We use the information we collect to provide, maintain, and improve our services, communicate with you, and comply with legal obligations."
+        },
+        "dataSecurity": {
+          "title": "Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "cookies": {
+          "title": "Cookies and Tracking",
+          "content": "We use cookies and similar tracking technologies to enhance your experience, analyze usage patterns, and personalize content. You can control cookie preferences through our cookie consent manager."
+        },
+        "yourRights": {
+          "title": "Your Privacy Rights",
+          "content": "Depending on your location, you may have certain rights regarding your personal information, including the right to access, update, or delete your data."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have any questions about this Privacy Policy, please contact us at admin@aioneers.io"
+        }
+      }
     }
   }
 }

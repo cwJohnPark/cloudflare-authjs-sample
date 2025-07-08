@@ -116,5 +116,39 @@ export type Dictionary = {
       gdprNotice: string;
       ccpaNotice: string;
     };
+    policy: {
+      title: string;
+      lastUpdated: string;
+      sections: {
+        intro: {
+          title: string;
+          content: string;
+        };
+        dataCollection: {
+          title: string;
+          content: string;
+        };
+        dataUsage: {
+          title: string;
+          content: string;
+        };
+        dataSecurity: {
+          title: string;
+          content: string;
+        };
+        cookies: {
+          title: string;
+          content: string;
+        };
+        yourRights: {
+          title: string;
+          content: string;
+        };
+        contact: {
+          title: string;
+          content: string;
+        };
+      };
+    };
   };
 };

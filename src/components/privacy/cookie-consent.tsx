@@ -1,19 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
-import { X, Shield, Settings, Cookie } from "lucide-react";
 import {
-  getStoredConsent,
-  storeConsent,
-  hasValidConsent,
-  isGDPRRegion,
-  isCCPARegion,
   ConsentState,
+  getStoredConsent,
+  hasValidConsent,
+  isCCPARegion,
+  isGDPRRegion,
+  storeConsent,
 } from "@/lib/analytics";
+import { Cookie, Shield, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface CookieConsentProps {
   dictionary: {

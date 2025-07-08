@@ -70,7 +70,14 @@
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "Aplicación de muestra avanzada de Cloudflare Workers construida con Next.js, Auth.js y soporte multiidioma.",
-    "keywords": ["Cloudflare Workers", "Next.js", "Auth.js", "multiidioma", "React", "TypeScript"],
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "multiidioma",
+      "React",
+      "TypeScript"
+    ],
     "pages": {
       "home": {
         "title": "Aioneers - Aplicación de muestra avanzada de Cloudflare Workers",
@@ -115,6 +122,40 @@
       "functionalDescription": "Estas cookies permiten funcionalidades mejoradas y personalización, como recordar sus preferencias.",
       "gdprNotice": "Bajo el RGPD, tiene derecho a controlar cómo se procesan sus datos personales. Puede cambiar sus preferencias en cualquier momento.",
       "ccpaNotice": "Bajo la CCPA, tiene derecho a saber qué información personal se recopila y a solicitar la eliminación de sus datos."
+    },
+    "policy": {
+      "title": "Política de Privacidad",
+      "lastUpdated": "Última actualización: Diciembre 2024",
+      "sections": {
+        "intro": {
+          "title": "Introducción",
+          "content": "En Aioneers, estamos comprometidos a proteger su privacidad y garantizar la seguridad de su información personal. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando utiliza nuestros servicios."
+        },
+        "dataCollection": {
+          "title": "Información que Recopilamos",
+          "content": "Recopilamos información que nos proporciona directamente, como cuando crea una cuenta, utiliza nuestros servicios o se pone en contacto con nosotros. Esto puede incluir su nombre, dirección de correo electrónico y datos de uso."
+        },
+        "dataUsage": {
+          "title": "Cómo Utilizamos su Información",
+          "content": "Utilizamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, comunicarnos con usted y cumplir con obligaciones legales."
+        },
+        "dataSecurity": {
+          "title": "Seguridad de Datos",
+          "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+        },
+        "cookies": {
+          "title": "Cookies y Seguimiento",
+          "content": "Utilizamos cookies y tecnologías de seguimiento similares para mejorar su experiencia, analizar patrones de uso y personalizar contenido. Puede controlar las preferencias de cookies a través de nuestro gestor de consentimiento de cookies."
+        },
+        "yourRights": {
+          "title": "Sus Derechos de Privacidad",
+          "content": "Dependiendo de su ubicación, puede tener ciertos derechos con respecto a su información personal, incluido el derecho a acceder, actualizar o eliminar sus datos."
+        },
+        "contact": {
+          "title": "Contáctenos",
+          "content": "Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros en admin@aioneers.io"
+        }
+      }
     }
   }
 }
