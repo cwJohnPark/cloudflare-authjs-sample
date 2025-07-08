@@ -66,5 +66,62 @@
     "confirm": "确认",
     "language": "语言",
     "description": "Aioneers是一个AI驱动的协作平台。"
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "使用Next.js、Auth.js和多语言支持构建的高级Cloudflare Workers示例应用程序。",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "多语言",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - 高级Cloudflare Workers示例应用",
+        "description": "探索我们使用Next.js、Auth.js和多语言支持构建的高级Cloudflare Workers示例应用程序。现代Web开发的完美选择。"
+      },
+      "dashboard": {
+        "title": "仪表板 - Aioneers 分析与洞察",
+        "description": "访问您的综合分析仪表板，包含实时数据、交互式图表和详细洞察。监控您的性能并做出数据驱动的决策。"
+      },
+      "auth": {
+        "title": "登录 - Aioneers 身份验证",
+        "description": "Aioneers 平台的安全身份验证门户。登录以访问您的仪表板、分析和个性化功能。"
+      },
+      "account": {
+        "title": "账户设置 - Aioneers 个人资料管理",
+        "description": "管理您的 Aioneers 账户设置、个人资料信息、安全偏好和应用程序配置。"
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "高级Cloudflare Workers示例应用程序",
+      "url": "https://aioneers.com",
+      "inLanguage": "zh"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "Cookie 偏好设置",
+      "description": "我们使用 Cookie 来增强您的体验、分析网站流量并个性化内容。您可以在下方管理您的偏好设置。",
+      "necessary": "必要 Cookie",
+      "analytics": "分析 Cookie",
+      "marketing": "营销 Cookie",
+      "functional": "功能性 Cookie",
+      "acceptAll": "全部接受",
+      "acceptSelected": "接受选定",
+      "rejectAll": "全部拒绝",
+      "showPreferences": "管理偏好",
+      "hidePreferences": "隐藏偏好",
+      "necessaryDescription": "这些 Cookie 对网站正常运行必不可少，无法禁用。",
+      "analyticsDescription": "这些 Cookie 帮助我们了解访问者如何与我们的网站互动，通过收集匿名信息。",
+      "marketingDescription": "这些 Cookie 用于个性化广告和跟踪营销活动。",
+      "functionalDescription": "这些 Cookie 启用增强功能和个性化，例如记住您的偏好设置。",
+      "gdprNotice": "根据 GDPR，您有权控制个人数据的处理方式。您可以随时更改偏好设置。",
+      "ccpaNotice": "根据 CCPA，您有权了解收集了哪些个人信息，并可要求删除您的数据。"
+    }
   }
 }

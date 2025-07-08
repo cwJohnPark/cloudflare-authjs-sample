@@ -66,5 +66,62 @@
     "confirm": "확인",
     "language": "언어",
     "description": "Aioneers는 AI 기반 협업 플랫폼입니다."
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "Next.js, Auth.js 및 다국어 지원으로 구축된 고급 Cloudflare Workers 샘플 애플리케이션입니다.",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "다국어",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - 고급 Cloudflare Workers 샘플 앱",
+        "description": "Next.js, Auth.js 및 다국어 지원으로 구축된 고급 Cloudflare Workers 샘플 애플리케이션을 살펴보세요. 현대적인 웹 개발에 완벽합니다."
+      },
+      "dashboard": {
+        "title": "대시보드 - Aioneers 분석 및 인사이트",
+        "description": "실시간 데이터, 대화형 차트, 상세한 인사이트가 포함된 종합 분석 대시보드에 액세스하세요. 성과를 모니터링하고 데이터 기반 의사결정을 내리세요."
+      },
+      "auth": {
+        "title": "로그인 - Aioneers 인증",
+        "description": "Aioneers 플랫폼을 위한 보안 인증 포털입니다. 로그인하여 대시보드, 분석 및 개인화된 기능에 액세스하세요."
+      },
+      "account": {
+        "title": "계정 설정 - Aioneers 프로필 관리",
+        "description": "Aioneers 계정 설정, 프로필 정보, 보안 기본 설정 및 애플리케이션 구성을 관리하세요."
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "고급 Cloudflare Workers 샘플 애플리케이션",
+      "url": "https://aioneers.com",
+      "inLanguage": "ko"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "쿠키 설정",
+      "description": "저희는 사용자 경험 향상, 사이트 트래픽 분석, 콘텐츠 개인화를 위해 쿠키를 사용합니다. 아래에서 설정을 관리할 수 있습니다.",
+      "necessary": "필수 쿠키",
+      "analytics": "분석 쿠키",
+      "marketing": "마케팅 쿠키",
+      "functional": "기능 쿠키",
+      "acceptAll": "모두 허용",
+      "acceptSelected": "선택 허용",
+      "rejectAll": "모두 거부",
+      "showPreferences": "설정 관리",
+      "hidePreferences": "설정 숨기기",
+      "necessaryDescription": "이 쿠키들은 웹사이트의 정상적인 작동을 위해 필수적이며 비활성화할 수 없습니다.",
+      "analyticsDescription": "이 쿠키들은 방문자가 웹사이트와 상호작용하는 방식을 익명으로 수집하여 이해하는 데 도움을 줍니다.",
+      "marketingDescription": "이 쿠키들은 광고를 개인화하고 마케팅 캠페인을 추적하는 데 사용됩니다.",
+      "functionalDescription": "이 쿠키들은 사용자 선호사항 기억과 같은 향상된 기능과 개인화를 가능하게 합니다.",
+      "gdprNotice": "GDPR에 따라 개인정보 처리 방식을 통제할 권리가 있습니다. 언제든지 설정을 변경할 수 있습니다.",
+      "ccpaNotice": "CCPA에 따라 수집되는 개인정보에 대해 알 권리와 데이터 삭제를 요청할 권리가 있습니다."
+    }
   }
 }

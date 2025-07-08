@@ -66,5 +66,62 @@
     "confirm": "確認",
     "language": "言語",
     "description": "AioneersはAI駆動のコラボレーションプラットフォームです。"
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "Next.js、Auth.js、多言語サポートで構築された高度なCloudflare Workersサンプルアプリケーションです。",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "多言語",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - 高度なCloudflare Workersサンプルアプリ",
+        "description": "Next.js、Auth.js、多言語サポートで構築された高度なCloudflare Workersサンプルアプリケーションをご覧ください。モダンなWeb開発に最適です。"
+      },
+      "dashboard": {
+        "title": "ダッシュボード - Aioneers アナリティクス＆インサイト",
+        "description": "リアルタイムデータ、インタラクティブチャート、詳細なインサイトを含む包括的な分析ダッシュボードにアクセスしてください。パフォーマンスを監視し、データに基づいた意思決定を行います。"
+      },
+      "auth": {
+        "title": "サインイン - Aioneers 認証",
+        "description": "Aioneersプラットフォームのセキュアな認証ポータルです。サインインしてダッシュボード、アナリティクス、パーソナライズド機能にアクセスしてください。"
+      },
+      "account": {
+        "title": "アカウント設定 - Aioneers プロファイル管理",
+        "description": "Aioneersアカウント設定、プロファイル情報、セキュリティ設定、アプリケーション設定を管理してください。"
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "高度なCloudflare Workersサンプルアプリケーション",
+      "url": "https://aioneers.com",
+      "inLanguage": "ja"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "クッキー設定",
+      "description": "私たちは、ユーザー体験の向上、サイトトラフィックの分析、コンテンツのパーソナライゼーションのためにクッキーを使用しています。以下で設定を管理できます。",
+      "necessary": "必須クッキー",
+      "analytics": "分析クッキー",
+      "marketing": "マーケティングクッキー",
+      "functional": "機能クッキー",
+      "acceptAll": "すべて許可",
+      "acceptSelected": "選択を許可",
+      "rejectAll": "すべて拒否",
+      "showPreferences": "設定を管理",
+      "hidePreferences": "設定を隠す",
+      "necessaryDescription": "これらのクッキーは、ウェブサイトが正常に機能するために必要不可欠であり、無効にすることはできません。",
+      "analyticsDescription": "これらのクッキーは、訪問者がウェブサイトとどのように相互作用するかを匿名で収集し、理解するのに役立ちます。",
+      "marketingDescription": "これらのクッキーは、広告をパーソナライズし、マーケティングキャンペーンを追跡するために使用されます。",
+      "functionalDescription": "これらのクッキーは、ユーザー設定の記憶など、拡張機能とパーソナライゼーションを可能にします。",
+      "gdprNotice": "GDPRの下で、個人データがどのように処理されるかを制御する権利があります。いつでも設定を変更できます。",
+      "ccpaNotice": "CCPAの下で、収集される個人情報について知る権利と、データの削除を要求する権利があります。"
+    }
   }
 }

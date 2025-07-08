@@ -67,4 +67,54 @@ export type Dictionary = {
     language: string;
     description: string;
   };
+  seo: {
+    siteName: string;
+    siteDescription: string;
+    keywords: string[];
+    pages: {
+      home: {
+        title: string;
+        description: string;
+      };
+      dashboard: {
+        title: string;
+        description: string;
+      };
+      auth: {
+        title: string;
+        description: string;
+      };
+      account: {
+        title: string;
+        description: string;
+      };
+    };
+    structuredData: {
+      name: string;
+      description: string;
+      url: string;
+      inLanguage: string;
+    };
+  };
+  privacy: {
+    cookieConsent: {
+      title: string;
+      description: string;
+      necessary: string;
+      analytics: string;
+      marketing: string;
+      functional: string;
+      acceptAll: string;
+      acceptSelected: string;
+      rejectAll: string;
+      showPreferences: string;
+      hidePreferences: string;
+      necessaryDescription: string;
+      analyticsDescription: string;
+      marketingDescription: string;
+      functionalDescription: string;
+      gdprNotice: string;
+      ccpaNotice: string;
+    };
+  };
 };

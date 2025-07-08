@@ -66,5 +66,62 @@
     "confirm": "Confirm",
     "language": "Language",
     "description": "Aioneers is a platform for AI-powered collaboration."
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "Advanced Cloudflare Workers sample application with Next.js, Auth.js, and internationalization support.",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "i18n",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - Advanced Cloudflare Workers Sample App",
+        "description": "Explore our advanced Cloudflare Workers sample application built with Next.js, Auth.js, and multi-language support. Perfect for modern web development."
+      },
+      "dashboard": {
+        "title": "Dashboard - Aioneers Analytics & Insights",
+        "description": "Access your comprehensive analytics dashboard with real-time data, interactive charts, and detailed insights. Monitor your performance and make data-driven decisions."
+      },
+      "auth": {
+        "title": "Sign In - Aioneers Authentication",
+        "description": "Secure authentication portal for Aioneers platform. Sign in to access your dashboard, analytics, and personalized features."
+      },
+      "account": {
+        "title": "Account Settings - Aioneers Profile Management",
+        "description": "Manage your Aioneers account settings, profile information, security preferences, and application configurations."
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "Advanced Cloudflare Workers sample application",
+      "url": "https://aioneers.com",
+      "inLanguage": "en"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "Cookie Preferences",
+      "description": "We use cookies to enhance your experience, analyze site traffic, and personalize content. You can manage your preferences below.",
+      "necessary": "Necessary Cookies",
+      "analytics": "Analytics Cookies",
+      "marketing": "Marketing Cookies",
+      "functional": "Functional Cookies",
+      "acceptAll": "Accept All",
+      "acceptSelected": "Accept Selected",
+      "rejectAll": "Reject All",
+      "showPreferences": "Manage Preferences",
+      "hidePreferences": "Hide Preferences",
+      "necessaryDescription": "These cookies are essential for the website to function properly and cannot be disabled.",
+      "analyticsDescription": "These cookies help us understand how visitors interact with our website by collecting anonymous information.",
+      "marketingDescription": "These cookies are used to personalize advertisements and track marketing campaigns.",
+      "functionalDescription": "These cookies enable enhanced functionality and personalization, such as remembering your preferences.",
+      "gdprNotice": "Under GDPR, you have the right to control how your personal data is processed. You can change your preferences at any time.",
+      "ccpaNotice": "Under CCPA, you have the right to know what personal information is collected and to request deletion of your data."
+    }
   }
 }

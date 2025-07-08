@@ -5,7 +5,7 @@ import { auth } from "../../auth";
 import { getDictionary } from "../../../../lib/dictionaries";
 
 type Props = {
-  params: Promise<{ lang: 'en' | 'ko' | 'ja' | 'es' | 'zh' }>;
+  params: Promise<{ lang: "en" | "ko" | "ja" | "es" | "zh" }>;
 };
 
 export default async function AuthPage({ params }: Props) {

@@ -5,6 +5,10 @@ import { auth } from "../auth";
 import { SessionProvider } from "@/components/session/provider";
 import { notFound } from "next/navigation";
 import { i18n } from "../../../i18n-config";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/structured-data";
+import { getDictionary } from "../../../lib/dictionaries";
+import { AnalyticsProvider } from "@/components/providers/analytics-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,10 +20,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Aioneers",
-  description: "Cloudflare Workers Sample App",
-};
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Aioneers - Cloudflare Workers Sample App",
+  description:
+    "Advanced Cloudflare Workers sample application with Next.js, Auth.js, and internationalization support.",
+  keywords: [
+    "Cloudflare Workers",
+    "Next.js",
+    "Auth.js",
+    "Internationalization",
+    "React",
+    "TypeScript",
+  ],
+  openGraph: {
+    title: "Aioneers - Cloudflare Workers Sample App",
+    description:
+      "Advanced Cloudflare Workers sample application with Next.js, Auth.js, and internationalization support.",
+    type: "website",
+  },
+});
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -32,9 +51,10 @@ type Props = {
 
 export default async function LangLayout({ children, params }: Props) {
   const { lang } = await params;
+  const dict = await getDictionary(lang as "en" | "ko" | "ja" | "es" | "zh");
 
   // 유효한 로케일인지 확인
-  if (!i18n.locales.includes(lang as typeof i18n.locales[number])) {
+  if (!i18n.locales.includes(lang as (typeof i18n.locales)[number])) {
     notFound();
   }
 
@@ -42,10 +62,21 @@ export default async function LangLayout({ children, params }: Props) {
 
   return (
     <html lang={lang}>
+      <head>
+        <StructuredData type="WebSite" dict={dict} />
+        <StructuredData type="Organization" dict={dict} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProvider value={session}>{children}</SessionProvider>
+        <SessionProvider value={session}>
+          <AnalyticsProvider
+            dictionary={dict}
+            ga4MeasurementId={process.env.GA4_MEASUREMENT_ID!}
+          >
+            {children}
+          </AnalyticsProvider>
+        </SessionProvider>
       </body>
     </html>
   );
