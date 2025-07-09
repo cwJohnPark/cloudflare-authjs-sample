@@ -15,7 +15,6 @@ import { Dictionary } from "../../../lib/types";
 import { Input } from "../ui/input";
 import { GoogleLoginButton } from "./button/auth-button";
 import { Turnstile } from "./turnstile";
-import { TurnstileScript } from "./turnstile-script";
 
 export function LoginForm({
   className,
@@ -74,7 +73,6 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
 
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   const handleTurnstileSuccess = (token: string) => {
     setTurnstileToken(token);
@@ -109,7 +107,6 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
 
   return (
     <>
-      <TurnstileScript onLoad={() => setScriptLoaded(true)} />
       <form action={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Input
@@ -123,16 +120,14 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
           />
         </div>
 
-        {scriptLoaded && (
-          <div className="flex justify-center w-full">
-            <Turnstile
-              sitekey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!}
-              onSuccess={handleTurnstileSuccess}
-              onError={handleTurnstileError}
-              onExpired={() => setTurnstileToken(null)}
-            />
-          </div>
-        )}
+        <div className="flex justify-center w-full">
+          <Turnstile
+            sitekey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!}
+            onSuccess={handleTurnstileSuccess}
+            onError={handleTurnstileError}
+            onExpired={() => setTurnstileToken(null)}
+          />
+        </div>
 
         <Button
           className="w-full"

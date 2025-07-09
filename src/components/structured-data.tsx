@@ -13,6 +13,7 @@ export function StructuredData({ type, dict }: StructuredDataProps) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      crossOrigin="anonymous"
     />
   );
 }

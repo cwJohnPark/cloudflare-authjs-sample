@@ -9,6 +9,7 @@ import { i18n } from "../../../i18n-config";
 import { getDictionary } from "../../../lib/dictionaries";
 import { auth } from "../auth/auth";
 import "../globals.css";
+import { TurnstileScript } from "@/components/auth/turnstile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,6 +66,7 @@ export default async function LangLayout({ children, params }: Props) {
       <head>
         <StructuredData type="WebSite" dict={dict} />
         <StructuredData type="Organization" dict={dict} />
+        <TurnstileScript />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
