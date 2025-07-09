@@ -61,8 +61,6 @@ AUTH_EMAIL_FROM="no-reply@yourdomain.com"
 AUTH_URL="http://localhost:8787/"
 AUTH_GOOGLE_ID="Google OAuth Client ID"
 AUTH_GOOGLE_SECRET="Google OAuth Client Secret"
-AUTH_APPLE_ID="Apple OAuth Client ID"
-AUTH_APPLE_SECRET="Apple OAuth Client Secret"
 ```
 
 **Environment Variables Explanation:**
@@ -72,9 +70,7 @@ AUTH_APPLE_SECRET="Apple OAuth Client Secret"
 - `AUTH_EMAIL_FROM`: Sender email address for authentication emails.
 - `AUTH_URL`: Local URL for development, deployed domain URL for production.
 - `AUTH_GOOGLE_ID/SECRET`: OAuth credentials from respective consoles. [AuthJS Google Provider](https://authjs.dev/getting-started/providers/google)
-- `AUTH_APPLE_ID/SECRET`: OAuth credentials from respective consoles. [AuthJS Apple Provider](https://authjs.dev/getting-started/providers/apple)
-
-**Note**: For Cloudflare Workers deployment, you'll also need to configure these same variables in your Cloudflare dashboard or use `.dev.vars` for local development with Wrangler.
+  **Note**: For Cloudflare Workers deployment, you'll also need to configure these same variables in your Cloudflare dashboard or use `.dev.vars` for local development with Wrangler.
 
 ### 5. Modify wrangler.jsonc File
 

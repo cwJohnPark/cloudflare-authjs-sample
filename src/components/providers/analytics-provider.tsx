@@ -1,14 +1,13 @@
 "use client";
 
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { createContext, useContext, useEffect, ReactNode } from "react";
-import { CookieConsent } from "@/components/privacy/cookie-consent";
 import {
   getStoredConsent,
   hasValidConsent,
   initializeConsent,
   type ConsentState,
 } from "@/lib/analytics";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { createContext, ReactNode, useContext, useEffect } from "react";
 import { Dictionary } from "../../../lib/types";
 
 // Analytics Context
@@ -29,12 +28,13 @@ interface AnalyticsProviderProps {
   children: ReactNode;
   dictionary: Dictionary;
   ga4MeasurementId: string;
+  gtmId: string;
 }
 
 export function AnalyticsProvider({
   children,
-  dictionary,
   ga4MeasurementId,
+  gtmId,
 }: AnalyticsProviderProps) {
   const consent = getStoredConsent();
   const hasConsent = hasValidConsent();
@@ -54,10 +54,10 @@ export function AnalyticsProvider({
   return (
     <AnalyticsContext.Provider value={contextValue}>
       {/* Next.js 공식 Google Analytics 4 - 동의된 경우에만 로드 */}
-      {isGoogleAnalyticsEnabled && <GoogleAnalytics gaId={ga4MeasurementId} />}
+      <GoogleAnalytics gaId={ga4MeasurementId} />
+      <GoogleTagManager gtmId={gtmId} />
       {/* 쿠키 동의 관리 */}
-      <CookieConsent dictionary={dictionary.privacy.cookieConsent} />
-
+      {/* <CookieConsent dictionary={dictionary.privacy.cookieConsent} /> */}
       {children}
     </AnalyticsContext.Provider>
   );

@@ -67,6 +67,23 @@
     "language": "Idioma",
     "description": "Aioneers es una plataforma de colaboración impulsada por IA."
   },
+  "payments": {
+    "buyNow": "Comprar Ahora",
+    "subscribe": "Suscribirse",
+    "upgrade": "Actualizar",
+    "checkout": "Pagar",
+    "processing": "Procesando...",
+    "paymentSuccess": "Pago Exitoso",
+    "paymentFailed": "Pago Fallido",
+    "tryAgain": "Intentar de Nuevo",
+    "cancel": "Cancelar",
+    "freeTrial": "Iniciar Prueba Gratuita",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "oneTime": "Pago Único",
+    "secure": "Pago Seguro",
+    "poweredBy": "Desarrollado por Lemon Squeezy"
+  },
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "Aplicación de muestra avanzada de Cloudflare Workers construida con Next.js, Auth.js y soporte multiidioma.",

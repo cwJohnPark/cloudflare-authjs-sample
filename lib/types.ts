@@ -67,6 +67,23 @@ export type Dictionary = {
     language: string;
     description: string;
   };
+  payments: {
+    buyNow: string;
+    subscribe: string;
+    upgrade: string;
+    checkout: string;
+    processing: string;
+    paymentSuccess: string;
+    paymentFailed: string;
+    tryAgain: string;
+    cancel: string;
+    freeTrial: string;
+    monthly: string;
+    yearly: string;
+    oneTime: string;
+    secure: string;
+    poweredBy: string;
+  };
   seo: {
     siteName: string;
     siteDescription: string;

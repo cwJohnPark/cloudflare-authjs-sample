@@ -67,6 +67,23 @@
     "language": "语言",
     "description": "Aioneers是一个AI驱动的协作平台。"
   },
+  "payments": {
+    "buyNow": "立即购买",
+    "subscribe": "订阅",
+    "upgrade": "升级",
+    "checkout": "结账",
+    "processing": "处理中...",
+    "paymentSuccess": "付款成功",
+    "paymentFailed": "付款失败",
+    "tryAgain": "重试",
+    "cancel": "取消",
+    "freeTrial": "开始免费试用",
+    "monthly": "月付",
+    "yearly": "年付",
+    "oneTime": "一次性付款",
+    "secure": "安全付款",
+    "poweredBy": "由 Lemon Squeezy 提供支持"
+  },
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "使用Next.js、Auth.js和多语言支持构建的高级Cloudflare Workers示例应用程序。",

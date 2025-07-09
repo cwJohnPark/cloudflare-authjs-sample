@@ -67,6 +67,23 @@
     "language": "Language",
     "description": "Aioneers is a platform for AI-powered collaboration."
   },
+  "payments": {
+    "buyNow": "Buy Now",
+    "subscribe": "Subscribe",
+    "upgrade": "Upgrade",
+    "checkout": "Checkout",
+    "processing": "Processing...",
+    "paymentSuccess": "Payment Successful",
+    "paymentFailed": "Payment Failed",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "freeTrial": "Start Free Trial",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "oneTime": "One-time Payment",
+    "secure": "Secure Payment",
+    "poweredBy": "Powered by Lemon Squeezy"
+  },
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "Advanced Cloudflare Workers sample application with Next.js, Auth.js, and internationalization support.",

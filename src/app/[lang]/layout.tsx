@@ -1,14 +1,14 @@
+import { AnalyticsProvider } from "@/components/providers/analytics-provider";
+import { SessionProvider } from "@/components/session/provider";
+import { StructuredData } from "@/components/structured-data";
+import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import { auth } from "../auth";
-import { SessionProvider } from "@/components/session/provider";
 import { notFound } from "next/navigation";
 import { i18n } from "../../../i18n-config";
-import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
-import { StructuredData } from "@/components/structured-data";
 import { getDictionary } from "../../../lib/dictionaries";
-import { AnalyticsProvider } from "@/components/providers/analytics-provider";
+import { auth } from "../auth";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,6 +73,7 @@ export default async function LangLayout({ children, params }: Props) {
           <AnalyticsProvider
             dictionary={dict}
             ga4MeasurementId={process.env.GA4_MEASUREMENT_ID!}
+            gtmId={process.env.GTM_ID!}
           >
             {children}
           </AnalyticsProvider>

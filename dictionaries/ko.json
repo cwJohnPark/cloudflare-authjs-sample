@@ -67,6 +67,23 @@
     "language": "언어",
     "description": "Aioneers는 AI 기반 협업 플랫폼입니다."
   },
+  "payments": {
+    "buyNow": "지금 구매",
+    "subscribe": "구독하기",
+    "upgrade": "업그레이드",
+    "checkout": "결제하기",
+    "processing": "처리 중...",
+    "paymentSuccess": "결제 완료",
+    "paymentFailed": "결제 실패",
+    "tryAgain": "다시 시도",
+    "cancel": "취소",
+    "freeTrial": "무료 체험 시작",
+    "monthly": "월간",
+    "yearly": "연간",
+    "oneTime": "일회성 결제",
+    "secure": "안전한 결제",
+    "poweredBy": "Lemon Squeezy 제공"
+  },
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "Next.js, Auth.js 및 다국어 지원으로 구축된 고급 Cloudflare Workers 샘플 애플리케이션입니다.",

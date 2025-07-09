@@ -67,6 +67,23 @@
     "language": "言語",
     "description": "AioneersはAI駆動のコラボレーションプラットフォームです。"
   },
+  "payments": {
+    "buyNow": "今すぐ購入",
+    "subscribe": "購読する",
+    "upgrade": "アップグレード",
+    "checkout": "決済",
+    "processing": "処理中...",
+    "paymentSuccess": "決済完了",
+    "paymentFailed": "決済失敗",
+    "tryAgain": "再試行",
+    "cancel": "キャンセル",
+    "freeTrial": "無料トライアル開始",
+    "monthly": "月間",
+    "yearly": "年間",
+    "oneTime": "一回限りの支払い",
+    "secure": "安全な決済",
+    "poweredBy": "Lemon Squeezy 提供"
+  },
   "seo": {
     "siteName": "Aioneers",
     "siteDescription": "Next.js、Auth.js、多言語サポートで構築された高度なCloudflare Workersサンプルアプリケーションです。",
