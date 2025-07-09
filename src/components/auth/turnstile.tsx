@@ -155,10 +155,7 @@ export function Turnstile({
 }
 
 export function TurnstileScript({ onLoad }: { onLoad?: () => void }) {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-
   const handleLoad = () => {
-    setScriptLoaded(true);
     onLoad?.();
     console.log("Turnstile script loaded");
   };
@@ -166,13 +163,6 @@ export function TurnstileScript({ onLoad }: { onLoad?: () => void }) {
   const handleError = () => {
     console.error("Failed to load Turnstile script");
   };
-
-  // 이미 로드된 경우 바로 콜백 호출
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.turnstile && !scriptLoaded) {
-      handleLoad();
-    }
-  }, [scriptLoaded]);
 
   return (
     <Script
