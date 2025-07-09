@@ -3,6 +3,7 @@ import { D1Adapter } from "@auth/d1-adapter";
 import NextAuth, { NextAuthResult } from "next-auth";
 import Google from "next-auth/providers/google";
 import Resend from "next-auth/providers/resend";
+import { sendVerificationRequest } from "./resend-verify";
 
 const authResult = async (): Promise<NextAuthResult> => {
   return NextAuth({
@@ -10,7 +11,6 @@ const authResult = async (): Promise<NextAuthResult> => {
     session: {
       strategy: "jwt",
     },
-    //  By default, the `id` property does not exist on `token` or `session`. See the [TypeScript](https://authjs.dev/getting-started/typescript) on how to add it.
     callbacks: {
       jwt({ token, user }) {
         if (user) {
@@ -31,9 +31,13 @@ const authResult = async (): Promise<NextAuthResult> => {
       Resend({
         apiKey: process.env.AUTH_RESEND_KEY,
         from: process.env.AUTH_EMAIL_FROM,
+        sendVerificationRequest: sendVerificationRequest,
       }),
     ],
     adapter: D1Adapter(await db()),
+    pages: {
+      error: "/auth/error",
+    },
   });
 };
 

@@ -1,4 +1,4 @@
-import { auth } from "../../auth";
+import { auth } from "../../auth/auth";
 import { getDictionary } from "../../../../lib/dictionaries";
 import { redirect } from "next/navigation";
 import { AccountClient } from "../../../components/account-client";

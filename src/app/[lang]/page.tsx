@@ -1,4 +1,4 @@
-import { auth } from "../auth";
+import { auth } from "../auth/auth";
 import { getDictionary } from "../../../lib/dictionaries";
 import { HomeClient } from "@/components/home-client";
 

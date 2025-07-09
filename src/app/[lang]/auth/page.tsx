@@ -1,7 +1,7 @@
 import { LoginForm } from "@/components/auth/login-form";
 import { BrainCircuit } from "lucide-react";
 import { redirect } from "next/navigation";
-import { auth } from "../../auth";
+import { auth } from "../../auth/auth";
 import { getDictionary } from "../../../../lib/dictionaries";
 
 type Props = {

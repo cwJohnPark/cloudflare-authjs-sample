@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { auth } from "../../auth";
+import { auth } from "../../auth/auth";
 import { getDictionary } from "../../../../lib/dictionaries";
 import { redirect } from "next/navigation";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -19,7 +19,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-  
+
   return generateMetadataFromDictionary(dict, "dashboard", lang, "/dashboard");
 }
 
@@ -34,7 +34,7 @@ export default async function DashboardPage({ params }: Props) {
 
   return (
     <SidebarProvider>
-      <AppSidebar variant="inset" dict={dict}/>
+      <AppSidebar variant="inset" dict={dict} />
       <SidebarInset>
         <SiteHeader />
         <div className="flex flex-1 flex-col">

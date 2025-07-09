@@ -1,4 +1,4 @@
-import { AnalyticsProvider } from "@/components/providers/analytics-provider";
+import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import { SessionProvider } from "@/components/session/provider";
 import { StructuredData } from "@/components/structured-data";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
@@ -7,7 +7,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { i18n } from "../../../i18n-config";
 import { getDictionary } from "../../../lib/dictionaries";
-import { auth } from "../auth";
+import { auth } from "../auth/auth";
 import "../globals.css";
 
 const geistSans = Geist({
