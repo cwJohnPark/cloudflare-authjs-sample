@@ -111,10 +111,6 @@ export function Turnstile({
   ]);
 
   useEffect(() => {
-    if (!isScriptLoaded) {
-      console.log("Script not loaded yet");
-      return;
-    }
     console.log("Script loaded");
     renderTurnstile();
   }, [isScriptLoaded, renderTurnstile]);

@@ -45,7 +45,7 @@ export function LoginForm({
                 {dict.auth?.orContinueWith}
               </span>
             </div>
-            <EmailLoginForm dict={dict} />
+            <EmailLoginFormClient dict={dict} />
           </div>
         </CardContent>
       </Card>
@@ -64,13 +64,7 @@ export function LoginForm({
   );
 }
 
-function EmailLoginForm({ dict }: { dict: Dictionary }) {
-  return <EmailLoginFormClient dict={dict} />;
-}
-
 function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
-  "use client";
-
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
