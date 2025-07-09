@@ -8,9 +8,12 @@ type Language = keyof typeof translations;
 
 // Detect language from Accept-Language header
 const detectLanguage = (request: Request): Language => {
-  const acceptLanguage = request.headers.get("Accept-Language") || "";
+  const referer = request.headers.get("referer");
+  const url = new URL(referer || "");
+  const acceptLanguage = url.pathname
 
   // Check for exact language matches
+  if (acceptLanguage.includes("en")) return "en";
   if (acceptLanguage.includes("ko")) return "ko";
   if (acceptLanguage.includes("ja")) return "ja";
   if (acceptLanguage.includes("zh")) return "zh";
@@ -33,7 +36,6 @@ interface EmailProviderSendVerificationRequestParams {
 export async function sendVerificationRequest(
   params: EmailProviderSendVerificationRequestParams
 ) {
-  logger.trace("request:", params.request);
   const isValid = await checkSiteVerify(params.request);
 
   if (!isValid) {

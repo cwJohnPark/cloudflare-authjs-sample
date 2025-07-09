@@ -6,29 +6,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 declare global {
   interface Window {
     turnstile: {
-      ready: (callback: () => void) => void;
-      render: (
-        container: string | HTMLElement,
-        options: {
-          sitekey: string;
-          callback?: (token: string) => void;
-          "expired-callback"?: () => void;
-          "error-callback"?: (error: string) => void;
-          theme?: "light" | "dark" | "auto";
-          size?: "normal" | "compact" | "flexible";
-          appearance?: "always" | "execute" | "interaction-only";
-          "refresh-timeout"?: "auto" | "manual" | "never";
-          "refresh-expired"?: "auto" | "manual" | "never";
-          retry?: "auto" | "never";
-          execution?: "render" | "execute";
-        }
-      ) => string;
-      remove: (widgetId: string) => void;
+      render: (container: string | HTMLElement, options: unknown) => string;
       reset: (widgetId: string) => void;
-      getResponse: (widgetId: string) => string;
-      isExpired: (widgetId: string) => boolean;
-      execute: (container: string | HTMLElement) => void;
+      remove: (widgetId: string) => void;
     };
+    onloadTurnstileCallback?: () => void;
   }
 }
 
@@ -65,11 +47,13 @@ export function Turnstile({
 
   const renderTurnstile = useCallback(() => {
     if (isRendered) {
+      console.log("Turnstile already rendered");
       return;
     }
+    console.log("Rendering Turnstile");
     console.log("siteKey", sitekey);
     if (!containerRef.current || !window.turnstile || !sitekey) {
-      console.log("Turnstile not rendered");
+      console.log("cannot render Turnstile");
       return;
     }
 
@@ -113,6 +97,7 @@ export function Turnstile({
     }
   }, [
     sitekey,
+    isRendered,
     onSuccess,
     onError,
     onExpired,
@@ -126,8 +111,11 @@ export function Turnstile({
   ]);
 
   useEffect(() => {
-    if (!isScriptLoaded) return;
-    console.log("isScriptLoaded", isScriptLoaded);
+    if (!isScriptLoaded) {
+      console.log("Script not loaded yet");
+      return;
+    }
+    console.log("Script loaded");
     renderTurnstile();
   }, [isScriptLoaded, renderTurnstile]);
 
@@ -152,7 +140,6 @@ export function TurnstileScript({ onLoad }: { onLoad?: () => void }) {
   return (
     <Script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-      strategy="lazyOnload"
       onLoad={handleLoad}
       onError={handleError}
     />
