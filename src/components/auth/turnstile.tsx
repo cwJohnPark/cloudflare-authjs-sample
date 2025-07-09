@@ -60,27 +60,22 @@ export function Turnstile({
   refreshTimeout = "auto",
 }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<string | null>(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
 
-  // Turnstile 위젯 렌더링 함수
   const renderTurnstile = useCallback(() => {
+    if (isRendered) {
+      return;
+    }
     console.log("siteKey", sitekey);
-    if (!containerRef.current || !window.turnstile || !sitekey || isRendered) {
+    if (!containerRef.current || !window.turnstile || !sitekey) {
       console.log("Turnstile not rendered");
       return;
     }
 
     try {
-      // 기존 위젯 정리
-      if (widgetIdRef.current) {
-        window.turnstile.remove(widgetIdRef.current);
-        widgetIdRef.current = null;
-      }
-
       // 새 위젯 렌더링
-      widgetIdRef.current = window.turnstile.render(containerRef.current, {
+      window.turnstile.render(containerRef.current, {
         sitekey,
         callback: (token: string) => {
           console.log("Turnstile success:", token);
@@ -103,17 +98,24 @@ export function Turnstile({
         "refresh-expired": refreshExpired,
         "refresh-timeout": refreshTimeout,
       });
+      console.log("Turnstile rendered");
+      setIsRendered(true);
 
-      if (widgetIdRef.current) {
-        setIsRendered(true);
-      }
+      return () => {
+        if (containerRef.current) {
+          window.turnstile.remove(containerRef.current.id);
+          setIsRendered(false);
+        }
+      };
     } catch (error) {
       console.error("Failed to render Turnstile:", error);
       onError?.("Failed to render Turnstile widget");
     }
   }, [
     sitekey,
-    isRendered,
+    onSuccess,
+    onError,
+    onExpired,
     theme,
     size,
     appearance,
@@ -121,30 +123,13 @@ export function Turnstile({
     retry,
     refreshExpired,
     refreshTimeout,
-    onSuccess,
-    onExpired,
-    onError,
   ]);
 
-  // 스크립트 로드 완료 후 렌더링
   useEffect(() => {
     if (!isScriptLoaded) return;
-
+    console.log("isScriptLoaded", isScriptLoaded);
     renderTurnstile();
   }, [isScriptLoaded, renderTurnstile]);
-
-  // 컴포넌트 언마운트 시 정리
-  useEffect(() => {
-    return () => {
-      if (widgetIdRef.current && window.turnstile) {
-        try {
-          window.turnstile.remove(widgetIdRef.current);
-        } catch (error) {
-          console.error("Failed to remove Turnstile widget:", error);
-        }
-      }
-    };
-  }, []);
 
   return (
     <>
