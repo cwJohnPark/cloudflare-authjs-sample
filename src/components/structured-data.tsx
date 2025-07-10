@@ -1,5 +1,5 @@
 import { generateStructuredData } from "@/lib/seo";
-import { Dictionary } from "../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
 
 interface StructuredDataProps {
   type: "WebSite" | "WebPage" | "Organization";

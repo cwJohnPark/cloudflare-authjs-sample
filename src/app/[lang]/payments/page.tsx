@@ -1,5 +1,5 @@
 import { PaymentDemo } from "@/components/payments/payment-demo";
-import { getDictionary } from "../../../../lib/dictionaries";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export default async function PaymentsPage({
   params,

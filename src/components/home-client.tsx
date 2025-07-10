@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BrainCircuit } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Session } from "next-auth";
-import { Dictionary } from "../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
 
 type HomeClientProps = {
   dict: Dictionary;

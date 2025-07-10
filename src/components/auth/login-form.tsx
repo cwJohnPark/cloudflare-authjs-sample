@@ -11,8 +11,8 @@ import {
 import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import { Dictionary } from "../../../lib/types";
-import { Input } from "../ui/input";
+import { Dictionary } from "@/lib/i18n/types";
+import { Input } from "@/components/ui/input";
 import { GoogleLoginButton } from "./button/auth-button";
 import { Turnstile } from "./turnstile";
 

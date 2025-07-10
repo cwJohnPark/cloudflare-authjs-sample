@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
-import { i18n } from "../../i18n-config";
+import { i18n } from "@/lib/i18n/i18n-config";
 
 const languages = [
   { code: "en", name: "English" },
@@ -36,10 +36,10 @@ export function LanguageSwitcher() {
 
   return (
     <Select value={currentLocale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-full h-8 border">
-        <div className="flex items-center gap-2">
-          <Globe className="h-3 w-3" />
-          <span className="text-xs">{currentLanguage?.name}</span>
+      <SelectTrigger className="w-full h-8 ">
+        <div className="flex items-center gap-2 justify-between">
+          <Globe className="h-4 w-4" />
+          <span className="text-md">{currentLanguage?.name}</span>
         </div>
       </SelectTrigger>
       <SelectContent>

@@ -26,8 +26,7 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { Dictionary } from "../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
 
 export function NavUser({
   user,
@@ -95,11 +94,6 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuGroup>
-                <div className="px-2 py-1.5">
-                  <LanguageSwitcher />
-                </div>
-              </DropdownMenuGroup>
               <DropdownMenuItem onClick={handleAccountClick}>
                 <UserCircleIcon />
                 {dict?.navigation?.account}
@@ -113,7 +107,6 @@ export function NavUser({
                 {dict?.navigation?.notifications}
               </DropdownMenuItem>
             </DropdownMenuGroup>
-            <DropdownMenuSeparator />
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={onClickLogout}>
               <LogOutIcon />

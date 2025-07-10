@@ -29,7 +29,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Dictionary } from "../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
+import Link from "next/link";
 
 type AppSidebarProps = React.ComponentProps<typeof Sidebar> & {
   dict: Dictionary;
@@ -45,10 +46,10 @@ export function AppSidebar({ dict, ...props }: AppSidebarProps) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <Link href="/">
                 <BrainCircuit className="size-8" />
                 <span className="text-base font-semibold">Aioneers</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -107,11 +108,6 @@ const getNavMain = (dict: Dictionary) => {
       url: "/reports",
       icon: FolderIcon,
     },
-    {
-      title: dict?.dashboard?.settings,
-      url: "/settings",
-      icon: SettingsIcon,
-    },
   ];
 };
 
@@ -139,7 +135,7 @@ const getNavSecondary = (dict: Dictionary) => {
   return [
     {
       title: dict?.dashboard?.settings,
-      url: "#",
+      url: "/settings",
       icon: SettingsIcon,
     },
     {

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Dictionary } from "../../lib/types";
+import { Dictionary } from "./i18n/types";
 
 export type SEOProps = {
   title?: string;

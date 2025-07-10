@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Dictionary } from "../../../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
 
 export function GoogleLoginButton({
   onGoogleLogin,

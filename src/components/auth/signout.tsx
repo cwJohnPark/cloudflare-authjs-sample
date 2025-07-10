@@ -1,8 +1,9 @@
 import { signOut } from "next-auth/react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import { Dictionary } from "@/lib/i18n/types";
 
-export function SignoutButton() {
+export function SignoutButton({ dict }: { dict: Dictionary }) {
   const handleSignOut = async () => {
     await signOut();
   };
@@ -14,7 +15,7 @@ export function SignoutButton() {
       className="flex items-center gap-2"
     >
       <LogOut className="h-4 w-4" />
-      로그아웃
+      {dict.auth?.signOut}
     </Button>
   );
 }

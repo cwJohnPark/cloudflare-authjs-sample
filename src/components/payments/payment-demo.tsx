@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Check, Star } from "lucide-react";
-import type { Dictionary } from "../../../lib/types";
+import type { Dictionary } from "@/lib/i18n/types";
 
 interface PaymentDemoProps {
   dictionary: Dictionary;

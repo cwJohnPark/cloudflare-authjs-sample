@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { i18n } from "../../../../i18n-config";
-import { getDictionary } from "../../../../lib/dictionaries";
+import { i18n } from "@/lib/i18n/i18n-config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 type Props = {
   params: Promise<{ lang: string }>;

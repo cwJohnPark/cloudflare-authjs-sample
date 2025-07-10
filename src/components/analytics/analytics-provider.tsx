@@ -8,7 +8,7 @@ import {
 } from "@/lib/analytics";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { createContext, ReactNode, useContext, useEffect } from "react";
-import { Dictionary } from "../../../lib/types";
+import { Dictionary } from "@/lib/i18n/types";
 
 // Analytics Context
 interface AnalyticsContextType {

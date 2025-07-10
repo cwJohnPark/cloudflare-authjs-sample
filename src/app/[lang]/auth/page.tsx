@@ -1,14 +1,11 @@
 import { LoginForm } from "@/components/auth/login-form";
 import { BrainCircuit } from "lucide-react";
 import { redirect } from "next/navigation";
-import { auth } from "../../auth/auth";
-import { getDictionary } from "../../../../lib/dictionaries";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import { auth } from "@/app/auth/config";
+import { LangProps } from "@/app/[lang]/page";
 
-type Props = {
-  params: Promise<{ lang: "en" | "ko" | "ja" | "es" | "zh" }>;
-};
-
-export default async function AuthPage({ params }: Props) {
+export default async function AuthPage({ params }: LangProps) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
   const session = await auth();

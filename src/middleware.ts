@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { i18n } from "../i18n-config";
+import { i18n } from "@/lib/i18n/i18n-config";
 
 function getLocale(request: NextRequest): string | undefined {
   // Check if there is any supported locale in the pathname

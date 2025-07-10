@@ -5,10 +5,11 @@ import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import { i18n } from "../../../i18n-config";
-import { getDictionary } from "../../../lib/dictionaries";
-import { auth } from "../auth/auth";
-import "../globals.css";
+import { i18n } from "@/lib/i18n/i18n-config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import { auth } from "@/app/auth/config";
+import "@/app/globals.css";
+import { LangProps } from "./page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,12 +47,12 @@ export async function generateStaticParams() {
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: Promise<LangProps["params"]>;
 };
 
 export default async function LangLayout({ children, params }: Props) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as "en" | "ko" | "ja" | "es" | "zh");
+  const dict = await getDictionary(lang);
 
   // 유효한 로케일인지 확인
   if (!i18n.locales.includes(lang as (typeof i18n.locales)[number])) {
