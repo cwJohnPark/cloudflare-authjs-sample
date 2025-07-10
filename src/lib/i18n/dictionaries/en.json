@@ -1,0 +1,200 @@
+{
+  "lang": "en",
+  "navigation": {
+    "account": "Account",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "logout": "Log out",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "signup": "Sign up"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "welcomeBack": "Welcome back",
+    "enterCredentials": "Login with your Apple or Google account",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create account",
+    "orContinueWith": "Or continue with",
+    "signInWithEmail": "Sign in with Resend",
+    "signInWithGoogle": "Login with Google",
+    "signInWithApple": "Login with Apple",
+    "terms": "By clicking continue, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your dashboard",
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "reports": "Reports",
+    "settings": "Settings",
+    "help": "Help",
+    "search": "Search"
+  },
+  "account": {
+    "title": "Account Settings",
+    "profile": "Profile",
+    "security": "Security",
+    "preferences": "Preferences",
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "save": "Save",
+    "cancel": "Cancel",
+    "unknown": "Unknown",
+    "noName": "No Name",
+    "noEmail": "No Email",
+    "connection": "Account Connection",
+    "connected": "Connected",
+    "changeName": "Change Name",
+    "nameUpdated": "Name has been successfully updated",
+    "nameUpdateFailed": "Error occurred while updating name"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageSettings": "Language Settings",
+    "theme": "Theme",
+    "themeSettings": "Theme Settings",
+    "notifications": "Notifications",
+    "notificationSettings": "Notification Settings",
+    "privacy": "Privacy",
+    "privacySettings": "Privacy Settings",
+    "security": "Security",
+    "securitySettings": "Security Settings",
+    "general": "General",
+    "generalSettings": "General Settings",
+    "appearance": "Appearance",
+    "appearanceSettings": "Appearance Settings",
+    "preferences": "Preferences",
+    "preferencesSettings": "Preferences Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "language": "Language",
+    "description": "Aioneers is a platform for AI-powered collaboration."
+  },
+  "payments": {
+    "buyNow": "Buy Now",
+    "subscribe": "Subscribe",
+    "upgrade": "Upgrade",
+    "checkout": "Checkout",
+    "processing": "Processing...",
+    "paymentSuccess": "Payment Successful",
+    "paymentFailed": "Payment Failed",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "freeTrial": "Start Free Trial",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "oneTime": "One-time Payment",
+    "secure": "Secure Payment",
+    "poweredBy": "Powered by Lemon Squeezy"
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "Advanced Cloudflare Workers sample application with Next.js, Auth.js, and internationalization support.",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "i18n",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - Advanced Cloudflare Workers Sample App",
+        "description": "Explore our advanced Cloudflare Workers sample application built with Next.js, Auth.js, and multi-language support. Perfect for modern web development."
+      },
+      "dashboard": {
+        "title": "Dashboard - Aioneers Analytics & Insights",
+        "description": "Access your comprehensive analytics dashboard with real-time data, interactive charts, and detailed insights. Monitor your performance and make data-driven decisions."
+      },
+      "auth": {
+        "title": "Sign In - Aioneers Authentication",
+        "description": "Secure authentication portal for Aioneers platform. Sign in to access your dashboard, analytics, and personalized features."
+      },
+      "account": {
+        "title": "Account Settings - Aioneers Profile Management",
+        "description": "Manage your Aioneers account settings, profile information, security preferences, and application configurations."
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "Advanced Cloudflare Workers sample application",
+      "url": "https://aioneers.com",
+      "inLanguage": "en"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "Cookie Preferences",
+      "description": "We use cookies to enhance your experience, analyze site traffic, and personalize content. You can manage your preferences below.",
+      "necessary": "Necessary Cookies",
+      "analytics": "Analytics Cookies",
+      "marketing": "Marketing Cookies",
+      "functional": "Functional Cookies",
+      "acceptAll": "Accept All",
+      "acceptSelected": "Accept Selected",
+      "rejectAll": "Reject All",
+      "showPreferences": "Manage Preferences",
+      "hidePreferences": "Hide Preferences",
+      "necessaryDescription": "These cookies are essential for the website to function properly and cannot be disabled.",
+      "analyticsDescription": "These cookies help us understand how visitors interact with our website by collecting anonymous information.",
+      "marketingDescription": "These cookies are used to personalize advertisements and track marketing campaigns.",
+      "functionalDescription": "These cookies enable enhanced functionality and personalization, such as remembering your preferences.",
+      "gdprNotice": "Under GDPR, you have the right to control how your personal data is processed. You can change your preferences at any time.",
+      "ccpaNotice": "Under CCPA, you have the right to know what personal information is collected and to request deletion of your data."
+    },
+    "policy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: December 2024",
+      "sections": {
+        "intro": {
+          "title": "Introduction",
+          "content": "At Aioneers, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services."
+        },
+        "dataCollection": {
+          "title": "Information We Collect",
+          "content": "We collect information you provide directly to us, such as when you create an account, use our services, or contact us. This may include your name, email address, and usage data."
+        },
+        "dataUsage": {
+          "title": "How We Use Your Information",
+          "content": "We use the information we collect to provide, maintain, and improve our services, communicate with you, and comply with legal obligations."
+        },
+        "dataSecurity": {
+          "title": "Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "cookies": {
+          "title": "Cookies and Tracking",
+          "content": "We use cookies and similar tracking technologies to enhance your experience, analyze usage patterns, and personalize content. You can control cookie preferences through our cookie consent manager."
+        },
+        "yourRights": {
+          "title": "Your Privacy Rights",
+          "content": "Depending on your location, you may have certain rights regarding your personal information, including the right to access, update, or delete your data."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have any questions about this Privacy Policy, please contact us at admin@aioneers.io"
+        }
+      }
+    }
+  }
+}

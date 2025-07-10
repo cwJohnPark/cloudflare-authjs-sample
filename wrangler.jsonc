@@ -20,6 +20,7 @@
       "binding": "DB",
       "database_name": "cf-worker-authjs-boilerplate-database",
       "database_id": "0e208d06-70d0-4ecf-8d65-16fd47e3ebbc",
+      "migrations_dir": "drizzle"
     }
   ],
   "routes": [

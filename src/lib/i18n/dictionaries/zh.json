@@ -1,0 +1,200 @@
+{
+  "lang": "zh",
+  "navigation": {
+    "account": "账户",
+    "billing": "账单",
+    "notifications": "通知",
+    "logout": "退出登录",
+    "dashboard": "仪表板",
+    "login": "登录",
+    "signup": "注册"
+  },
+  "auth": {
+    "signIn": "登录",
+    "signOut": "退出登录",
+    "email": "电子邮箱",
+    "password": "密码",
+    "welcomeBack": "欢迎回来",
+    "enterCredentials": "使用您的Apple或Google账户登录",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "没有账户？",
+    "createAccount": "创建账户",
+    "orContinueWith": "或继续使用",
+    "signInWithEmail": "使用Resend登录",
+    "signInWithGoogle": "使用Google登录",
+    "signInWithApple": "使用Apple登录",
+    "terms": "点击继续即表示您同意我们的",
+    "termsOfService": "服务条款",
+    "and": "和",
+    "privacyPolicy": "隐私政策"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎来到您的仪表板",
+    "overview": "概览",
+    "analytics": "分析",
+    "reports": "报告",
+    "settings": "设置",
+    "help": "帮助",
+    "search": "搜索"
+  },
+  "account": {
+    "title": "账户设置",
+    "profile": "个人资料",
+    "security": "安全",
+    "preferences": "偏好设置",
+    "personalInfo": "个人信息",
+    "name": "姓名",
+    "email": "电子邮箱",
+    "save": "保存",
+    "cancel": "取消",
+    "unknown": "未知",
+    "noName": "无姓名",
+    "noEmail": "无电子邮箱",
+    "connection": "账户连接",
+    "connected": "已连接",
+    "changeName": "修改姓名",
+    "nameUpdated": "姓名已成功更新",
+    "nameUpdateFailed": "更新姓名时发生错误"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "languageSettings": "语言设置",
+    "theme": "主题",
+    "themeSettings": "主题设置",
+    "notifications": "通知",
+    "notificationSettings": "通知设置",
+    "privacy": "隐私",
+    "privacySettings": "隐私设置",
+    "security": "安全",
+    "securitySettings": "安全设置",
+    "general": "常规",
+    "generalSettings": "常规设置",
+    "appearance": "外观",
+    "appearanceSettings": "外观设置",
+    "preferences": "偏好设置",
+    "preferencesSettings": "偏好设置"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "submit": "提交",
+    "close": "关闭",
+    "edit": "编辑",
+    "delete": "删除",
+    "confirm": "确认",
+    "language": "语言",
+    "description": "Aioneers是一个AI驱动的协作平台。"
+  },
+  "payments": {
+    "buyNow": "立即购买",
+    "subscribe": "订阅",
+    "upgrade": "升级",
+    "checkout": "结账",
+    "processing": "处理中...",
+    "paymentSuccess": "付款成功",
+    "paymentFailed": "付款失败",
+    "tryAgain": "重试",
+    "cancel": "取消",
+    "freeTrial": "开始免费试用",
+    "monthly": "月付",
+    "yearly": "年付",
+    "oneTime": "一次性付款",
+    "secure": "安全付款",
+    "poweredBy": "由 Lemon Squeezy 提供支持"
+  },
+  "seo": {
+    "siteName": "Aioneers",
+    "siteDescription": "使用Next.js、Auth.js和多语言支持构建的高级Cloudflare Workers示例应用程序。",
+    "keywords": [
+      "Cloudflare Workers",
+      "Next.js",
+      "Auth.js",
+      "多语言",
+      "React",
+      "TypeScript"
+    ],
+    "pages": {
+      "home": {
+        "title": "Aioneers - 高级Cloudflare Workers示例应用",
+        "description": "探索我们使用Next.js、Auth.js和多语言支持构建的高级Cloudflare Workers示例应用程序。现代Web开发的完美选择。"
+      },
+      "dashboard": {
+        "title": "仪表板 - Aioneers 分析与洞察",
+        "description": "访问您的综合分析仪表板，包含实时数据、交互式图表和详细洞察。监控您的性能并做出数据驱动的决策。"
+      },
+      "auth": {
+        "title": "登录 - Aioneers 身份验证",
+        "description": "Aioneers 平台的安全身份验证门户。登录以访问您的仪表板、分析和个性化功能。"
+      },
+      "account": {
+        "title": "账户设置 - Aioneers 个人资料管理",
+        "description": "管理您的 Aioneers 账户设置、个人资料信息、安全偏好和应用程序配置。"
+      }
+    },
+    "structuredData": {
+      "name": "Aioneers",
+      "description": "高级Cloudflare Workers示例应用程序",
+      "url": "https://aioneers.com",
+      "inLanguage": "zh"
+    }
+  },
+  "privacy": {
+    "cookieConsent": {
+      "title": "Cookie 偏好设置",
+      "description": "我们使用 Cookie 来增强您的体验、分析网站流量并个性化内容。您可以在下方管理您的偏好设置。",
+      "necessary": "必要 Cookie",
+      "analytics": "分析 Cookie",
+      "marketing": "营销 Cookie",
+      "functional": "功能性 Cookie",
+      "acceptAll": "全部接受",
+      "acceptSelected": "接受选定",
+      "rejectAll": "全部拒绝",
+      "showPreferences": "管理偏好",
+      "hidePreferences": "隐藏偏好",
+      "necessaryDescription": "这些 Cookie 对网站正常运行必不可少，无法禁用。",
+      "analyticsDescription": "这些 Cookie 帮助我们了解访问者如何与我们的网站互动，通过收集匿名信息。",
+      "marketingDescription": "这些 Cookie 用于个性化广告和跟踪营销活动。",
+      "functionalDescription": "这些 Cookie 启用增强功能和个性化，例如记住您的偏好设置。",
+      "gdprNotice": "根据 GDPR，您有权控制个人数据的处理方式。您可以随时更改偏好设置。",
+      "ccpaNotice": "根据 CCPA，您有权了解收集了哪些个人信息，并可要求删除您的数据。"
+    },
+    "policy": {
+      "title": "隐私政策",
+      "lastUpdated": "最后更新：2024年12月",
+      "sections": {
+        "intro": {
+          "title": "介绍",
+          "content": "在Aioneers，我们致力于保护您的隐私并确保您个人信息的安全。本隐私政策解释了我们在您使用我们的服务时如何收集、使用、披露和保护您的信息。"
+        },
+        "dataCollection": {
+          "title": "我们收集的信息",
+          "content": "我们收集您直接提供给我们的信息，例如当您创建账户、使用我们的服务或联系我们时。这可能包括您的姓名、电子邮件地址和使用数据。"
+        },
+        "dataUsage": {
+          "title": "我们如何使用您的信息",
+          "content": "我们使用收集的信息来提供、维护和改进我们的服务，与您沟通，并遵守法律义务。"
+        },
+        "dataSecurity": {
+          "title": "数据安全",
+          "content": "我们实施适当的技术和组织措施，以保护您的个人信息免受未经授权的访问、更改、披露或销毁。"
+        },
+        "cookies": {
+          "title": "Cookie和跟踪",
+          "content": "我们使用Cookie和类似的跟踪技术来增强您的体验、分析使用模式和个性化内容。您可以通过我们的Cookie同意管理器控制Cookie偏好。"
+        },
+        "yourRights": {
+          "title": "您的隐私权利",
+          "content": "根据您的位置，您可能对您的个人信息拥有某些权利，包括访问、更新或删除您的数据的权利。"
+        },
+        "contact": {
+          "title": "联系我们",
+          "content": "如果您对本隐私政策有任何疑问，请通过admin@aioneers.io联系我们。"
+        }
+      }
+    }
+  }
+}
