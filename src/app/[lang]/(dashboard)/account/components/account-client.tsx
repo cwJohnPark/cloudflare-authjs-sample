@@ -25,7 +25,6 @@ type AccountClientProps = {
 
 export function AccountClient({ dict, user }: AccountClientProps) {
   const [currentUser, setCurrentUser] = useState<User>(user);
-  const [isEditingName, setIsEditingName] = useState(false);
   const [newName, setNewName] = useState(user?.name || "");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -38,7 +37,6 @@ export function AccountClient({ dict, user }: AccountClientProps) {
       const response = await updateUser(newName);
 
       if (response.ok) {
-        setIsEditingName(false);
         // 사용자 정보 업데이트
         setCurrentUser((prevUser) => ({ ...prevUser, name: newName.trim() }));
       } else {
@@ -51,12 +49,6 @@ export function AccountClient({ dict, user }: AccountClientProps) {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  // 편집 취소 핸들러
-  const handleCancelEdit = () => {
-    setNewName(currentUser?.name || "");
-    setIsEditingName(false);
   };
 
   return (
@@ -91,49 +83,17 @@ export function AccountClient({ dict, user }: AccountClientProps) {
                     <Label htmlFor="name" className="text-sm font-medium">
                       {dict.account?.name}
                     </Label>
-                    {isEditingName ? (
-                      <div className="flex items-center gap-2 mt-1">
-                        <Input
-                          id="name"
-                          type="text"
-                          value={newName}
-                          onChange={(e) => setNewName(e.target.value)}
-                          placeholder={dict.account?.name}
-                          className="flex-1"
-                          maxLength={50}
-                        />
-                        <Button
-                          onClick={handleNameChange}
-                          disabled={isLoading || !newName.trim()}
-                          size="sm"
-                        >
-                          {isLoading
-                            ? dict.common?.loading
-                            : dict.account?.save}
-                        </Button>
-                        <Button
-                          onClick={handleCancelEdit}
-                          variant="outline"
-                          size="sm"
-                          disabled={isLoading}
-                        >
-                          {dict.account?.cancel}
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2 mt-1">
-                        <p className="text-sm text-muted-foreground flex-1">
-                          {currentUser?.name || dict.account?.noName}
-                        </p>
-                        <Button
-                          onClick={() => setIsEditingName(true)}
-                          variant="outline"
-                          size="sm"
-                        >
-                          {dict.common?.edit}
-                        </Button>
-                      </div>
-                    )}
+                    <div className="mt-1">
+                      <Input
+                        id="name"
+                        type="text"
+                        value={newName}
+                        onChange={(e) => setNewName(e.target.value)}
+                        placeholder={dict.account?.name}
+                        className="w-full"
+                        maxLength={50}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -160,6 +120,16 @@ export function AccountClient({ dict, user }: AccountClientProps) {
               </div>
             </CardContent>
           </Card>
+        </div>
+        <div className="flex justify-center mb-4">
+          <Button
+            onClick={handleNameChange}
+            disabled={isLoading || !newName.trim()}
+            size="lg"
+            className="px-8"
+          >
+            {isLoading ? dict.common?.loading : dict.account?.save}
+          </Button>
         </div>
         <div className="flex justify-center">
           <SignoutButton dict={dict} />

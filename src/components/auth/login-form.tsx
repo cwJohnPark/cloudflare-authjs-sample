@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Dictionary } from "@/lib/i18n/types";
 import { Input } from "@/components/ui/input";
 import { GoogleLoginButton } from "./button/auth-button";
@@ -67,6 +67,7 @@ export function LoginForm({
 function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleTurnstileSuccess = (token: string) => {
     setTurnstileToken(token);
@@ -76,11 +77,17 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
     setTurnstileToken(null);
   };
 
-  const handleSubmit = async (formData: FormData) => {
+  const handleSubmit = async () => {
+    if (!formRef.current) {
+      return;
+    }
+
     if (!turnstileToken) {
       alert("Please complete the security check");
       return;
     }
+
+    const formData = new FormData(formRef.current);
 
     setIsSubmitting(true);
 
@@ -101,7 +108,7 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
 
   return (
     <>
-      <form action={handleSubmit} className="space-y-4">
+      <form ref={formRef} className="space-y-4">
         <div className="space-y-2">
           <Input
             type="email"
@@ -126,6 +133,7 @@ function EmailLoginFormClient({ dict }: { dict: Dictionary }) {
         <Button
           className="w-full"
           type="submit"
+          onClick={() => handleSubmit()}
           disabled={!turnstileToken || isSubmitting}
         >
           {isSubmitting ? "Signing in..." : dict.auth?.signInWithEmail}
