@@ -5,9 +5,11 @@ import { BrainCircuit, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Dictionary } from "@/lib/i18n/types";
+import { Session } from "next-auth";
 
 type HeaderProps = {
   dictionary: Dictionary;
+  session: Session | null;
 };
 
 // 네비게이션 아이템 타입
@@ -46,7 +48,7 @@ const NavigationLink = ({
   );
 };
 
-export function Header({ dictionary }: HeaderProps) {
+export function Header({ dictionary, session }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // 딕셔너리를 사용한 네비게이션 아이템들
@@ -92,11 +94,19 @@ export function Header({ dictionary }: HeaderProps) {
             </div>
           </div>
 
-          {/* Sign in Button */}
+          {/* Sign in / Dashboard Button */}
           <div className="hidden md:block">
-            <Button variant="ghost" asChild>
-              <Link href="/auth">{dictionary.landing.navigation.signIn}</Link>
-            </Button>
+            {session ? (
+              <Button variant="default" asChild>
+                <Link href="/dashboard">
+                  {dictionary.landing.navigation.goToDashboard}
+                </Link>
+              </Button>
+            ) : (
+              <Button variant="ghost" asChild>
+                <Link href="/auth">{dictionary.landing.navigation.signIn}</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -130,11 +140,19 @@ export function Header({ dictionary }: HeaderProps) {
               />
             ))}
             <div className="pt-2 pb-3">
-              <Button variant="ghost" asChild>
-                <Link href="/auth" onClick={handleMobileMenuClose}>
-                  {dictionary.landing.navigation.signIn}
-                </Link>
-              </Button>
+              {session ? (
+                <Button variant="default" asChild>
+                  <Link href="/dashboard" onClick={handleMobileMenuClose}>
+                    {dictionary.landing.navigation.goToDashboard}
+                  </Link>
+                </Button>
+              ) : (
+                <Button variant="ghost" asChild>
+                  <Link href="/auth" onClick={handleMobileMenuClose}>
+                    {dictionary.landing.navigation.signIn}
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>

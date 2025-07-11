@@ -57,7 +57,7 @@ export function FeaturesSection({ dictionary }: FeaturesSectionProps) {
         </ScrollAnimation>
 
         <StaggeredAnimation
-          stagger={150}
+          stagger={100}
           direction="up"
           className="grid md:grid-cols-3 gap-12"
         >

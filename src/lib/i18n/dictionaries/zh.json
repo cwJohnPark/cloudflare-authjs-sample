@@ -15,7 +15,8 @@
       "product": "产品",
       "feature": "功能",
       "pricing": "定价",
-      "signIn": "登录"
+      "signIn": "登录",
+      "goToDashboard": "前往仪表板"
     },
     "hero": {
       "brandName": "Aioneers",

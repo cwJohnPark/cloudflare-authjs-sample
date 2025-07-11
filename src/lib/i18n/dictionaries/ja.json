@@ -15,7 +15,8 @@
       "product": "製品",
       "feature": "機能",
       "pricing": "価格",
-      "signIn": "サインイン"
+      "signIn": "サインイン",
+      "goToDashboard": "ダッシュボードへ"
     },
     "hero": {
       "brandName": "Aioneers",

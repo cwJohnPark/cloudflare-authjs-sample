@@ -18,20 +18,20 @@ type BenefitsSectionProps = {
 };
 
 export function BenefitsSection({ dictionary }: BenefitsSectionProps) {
-  const benefits: Benefit[] = [
-    {
+const benefits: Benefit[] = [
+  {
       icon: TrendingUp,
       metric: dictionary.landing.benefits.items.modelsDeployed.metric,
       label: dictionary.landing.benefits.items.modelsDeployed.label,
       description: dictionary.landing.benefits.items.modelsDeployed.description,
-    },
-    {
+  },
+  {
       icon: Clock,
       metric: dictionary.landing.benefits.items.uptime.metric,
       label: dictionary.landing.benefits.items.uptime.label,
       description: dictionary.landing.benefits.items.uptime.description,
-    },
-    {
+  },
+  {
       icon: Shield,
       metric: dictionary.landing.benefits.items.responseTime.metric,
       label: dictionary.landing.benefits.items.responseTime.label,
@@ -43,14 +43,14 @@ export function BenefitsSection({ dictionary }: BenefitsSectionProps) {
     <section className="py-20 bg-accent/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation direction="up" threshold={0.1}>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {dictionary.landing.benefits.title}
-            </h2>
+          </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {dictionary.landing.benefits.description}
-            </p>
-          </div>
+          </p>
+        </div>
         </ScrollAnimation>
 
         <StaggeredAnimation

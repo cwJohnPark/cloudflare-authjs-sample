@@ -16,6 +16,7 @@ export type Dictionary = {
       feature: string;
       pricing: string;
       signIn: string;
+      goToDashboard: string;
     };
     hero: {
       brandName: string;

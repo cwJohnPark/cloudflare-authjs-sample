@@ -15,7 +15,8 @@
       "product": "제품",
       "feature": "기능",
       "pricing": "가격",
-      "signIn": "로그인"
+      "signIn": "로그인",
+      "goToDashboard": "대시보드로 이동"
     },
     "hero": {
       "brandName": "Aioneers",

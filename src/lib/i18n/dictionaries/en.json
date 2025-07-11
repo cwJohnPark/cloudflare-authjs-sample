@@ -15,7 +15,8 @@
       "product": "Product",
       "feature": "Feature",
       "pricing": "Pricing",
-      "signIn": "Sign in"
+      "signIn": "Sign in",
+      "goToDashboard": "Go to Dashboard"
     },
     "hero": {
       "brandName": "Aioneers",

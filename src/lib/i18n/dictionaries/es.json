@@ -15,7 +15,8 @@
       "product": "Producto",
       "feature": "Características",
       "pricing": "Precios",
-      "signIn": "Iniciar sesión"
+      "signIn": "Iniciar sesión",
+      "goToDashboard": "Ir al Panel"
     },
     "hero": {
       "brandName": "Aioneers",
