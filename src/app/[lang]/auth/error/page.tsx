@@ -2,7 +2,6 @@
 
 import { useSearchParams } from "next/navigation";
 
-// TODO: Translate
 enum Error {
   Configuration = "Configuration",
   TurnstileVerificationFailed = "TurnstileVerificationFailed",

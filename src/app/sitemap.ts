@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = process.env.NEXT_PUBLIC_APP_URL!;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL!;
   const languages = ["en", "ko", "ja", "es", "zh"];
   const routes = ["", "/dashboard", "/auth", "/account"];
 
@@ -48,10 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency,
         priority,
         alternates: {
-          languages: languages.reduce((acc, altLang) => {
-            acc[altLang] = `${baseUrl}/${altLang}${route}`;
-            return acc;
-          }, {} as Record<string, string>),
+          languages: languages.reduce(
+            (acc, altLang) => {
+              acc[altLang] = `${baseUrl}/${altLang}${route}`;
+              return acc;
+            },
+            {} as Record<string, string>
+          ),
         },
       });
     });

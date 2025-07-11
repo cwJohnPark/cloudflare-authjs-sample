@@ -8,19 +8,32 @@ type Language = keyof typeof translations;
 
 // Detect language from Accept-Language header
 const detectLanguage = (request: Request): Language => {
-  const referer = request.headers.get("referer");
-  const url = new URL(referer || "");
-  const acceptLanguage = url.pathname
+  try {
+    const referer = request.headers.get("referer");
 
-  // Check for exact language matches
-  if (acceptLanguage.includes("en")) return "en";
-  if (acceptLanguage.includes("ko")) return "ko";
-  if (acceptLanguage.includes("ja")) return "ja";
-  if (acceptLanguage.includes("zh")) return "zh";
-  if (acceptLanguage.includes("es")) return "es";
+    // If no referer header, return default language
+    if (!referer) {
+      return "en";
+    }
 
-  // Default to English
-  return "en";
+    // Try to parse the URL
+    const url = new URL(referer);
+    const acceptLanguage = url.pathname;
+
+    // Check for exact language matches
+    if (acceptLanguage.includes("en")) return "en";
+    if (acceptLanguage.includes("ko")) return "ko";
+    if (acceptLanguage.includes("ja")) return "ja";
+    if (acceptLanguage.includes("zh")) return "zh";
+    if (acceptLanguage.includes("es")) return "es";
+
+    // Default to English
+    return "en";
+  } catch (error) {
+    // If URL parsing fails (e.g., during build time), return default language
+    logger.warn("Failed to parse referer URL for language detection:", error);
+    return "en";
+  }
 };
 
 interface EmailProviderSendVerificationRequestParams {
