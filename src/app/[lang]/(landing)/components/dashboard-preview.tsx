@@ -3,6 +3,7 @@
 import { TrendingUp, Brain, Zap, Users } from "lucide-react";
 import { Label, PolarRadiusAxis, RadialBar, RadialBarChart } from "recharts";
 import { useEffect, useState } from "react";
+import { Dictionary } from "@/lib/i18n/types";
 
 import {
   Card,
@@ -32,7 +33,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function DashboardPreview() {
+type DashboardPreviewProps = {
+  dictionary: Dictionary;
+};
+
+export function DashboardPreview({ dictionary }: DashboardPreviewProps) {
   const [showCards, setShowCards] = useState(false);
   const totalVisitors = chartData[0].desktop + chartData[0].mobile;
 
@@ -68,16 +73,18 @@ export function DashboardPreview() {
                 </div>
                 <div>
                   <CardTitle className="text-lg font-semibold">
-                    AI Console
+                    {dictionary.landing.dashboard.aiConsole.title}
                   </CardTitle>
                   <CardDescription className="text-sm">
-                    Real-time monitoring
+                    {dictionary.landing.dashboard.aiConsole.subtitle}
                   </CardDescription>
                 </div>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs text-muted-foreground">Live</span>
+                <span className="text-xs text-muted-foreground">
+                  {dictionary.landing.dashboard.aiConsole.live}
+                </span>
               </div>
             </div>
           </CardHeader>
@@ -86,11 +93,11 @@ export function DashboardPreview() {
             <div className="text-center py-4 mb-11">
               <div className="text-3xl font-bold text-foreground mb-1">127</div>
               <div className="text-sm text-muted-foreground mb-2">
-                Active Models
+                {dictionary.landing.dashboard.aiConsole.activeModels}
               </div>
               <div className="inline-flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
                 <TrendingUp className="w-3 h-3" />
-                +12 this week
+                {dictionary.landing.dashboard.aiConsole.weeklyGrowth}
               </div>
             </div>
 
@@ -99,11 +106,11 @@ export function DashboardPreview() {
                 <div className="flex items-center gap-1">
                   <Zap className="w-4 h-4 text-primary" />
                   <span className="text-xs font-medium text-foreground">
-                    Model Training
+                    {dictionary.landing.dashboard.aiConsole.modelTraining}
                   </span>
                 </div>
                 <span className="text-xs text-black bg-primary/10 px-2 py-1 rounded-full">
-                  In Progress
+                  {dictionary.landing.dashboard.aiConsole.inProgress}
                 </span>
               </div>
               <div className="w-full bg-primary/10 rounded-full h-2">
@@ -132,10 +139,10 @@ export function DashboardPreview() {
               </div>
               <div>
                 <CardTitle className="text-lg font-semibold">
-                  User Analytics
+                  {dictionary.landing.dashboard.userAnalytics.title}
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  Performance metrics
+                  {dictionary.landing.dashboard.userAnalytics.subtitle}
                 </CardDescription>
               </div>
             </div>
@@ -178,7 +185,10 @@ export function DashboardPreview() {
                               y={(viewBox.cy || 0) + 8}
                               className="fill-muted-foreground text-sm"
                             >
-                              Total Users
+                              {
+                                dictionary.landing.dashboard.userAnalytics
+                                  .totalUsers
+                              }
                             </tspan>
                           </text>
                         );
@@ -207,10 +217,12 @@ export function DashboardPreview() {
           <CardFooter className="flex-col gap-2 text-sm pt-2">
             <div className="flex items-center gap-2 leading-none font-medium text-green-700">
               <TrendingUp className="h-4 w-4" />
-              <span>Trending up by 5.2% this month</span>
+              <span>
+                {dictionary.landing.dashboard.userAnalytics.trendingUp}
+              </span>
             </div>
             <div className="text-muted-foreground leading-none text-xs">
-              Desktop & Mobile engagement metrics
+              {dictionary.landing.dashboard.userAnalytics.engagementMetrics}
             </div>
           </CardFooter>
         </Card>

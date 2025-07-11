@@ -9,6 +9,119 @@
     "login": "Iniciar sesión",
     "signup": "Registrarse"
   },
+  "landing": {
+    "navigation": {
+      "home": "Inicio",
+      "product": "Producto",
+      "feature": "Características",
+      "pricing": "Precios",
+      "signIn": "Iniciar sesión"
+    },
+    "hero": {
+      "brandName": "Aioneers",
+      "title1": "Construye el futuro",
+      "title2": "con soluciones",
+      "title3": "impulsadas por IA",
+      "description1": "Acelera tu desarrollo de IA con nuestra",
+      "description2": "plataforma integral de modelos preentrenados,",
+      "description3": "APIs potentes e infraestructura de nivel empresarial.",
+      "startBuilding": "Comenzar a Construir",
+      "stats": {
+        "modelsDeployed": "10M+",
+        "modelsDeployedLabel": "Modelos de IA Desplegados",
+        "uptime": "99.9%",
+        "uptimeLabel": "Tiempo de Actividad",
+        "responseTime": "50ms",
+        "responseTimeLabel": "Tiempo de Respuesta"
+      }
+    },
+    "features": {
+      "title": "Todo lo que necesitas para construir IA",
+      "description": "Nuestra plataforma integral proporciona todas las herramientas, modelos e infraestructura que necesitas para crear aplicaciones de IA listas para producción.",
+      "items": {
+        "smartAI": {
+          "title": "Modelos de IA Inteligentes",
+          "description": "Accede a nuestra biblioteca de modelos preentrenados para visión por computadora, NLP y más. Despliega instantáneamente con nuestra integración API de un clic."
+        },
+        "lightningFast": {
+          "title": "Súper Rápido",
+          "description": "La infraestructura optimizada entrega predicciones de IA en milisegundos. Escala desde prototipo hasta producción sin problemas."
+        },
+        "enterpriseSecurity": {
+          "title": "Seguridad Empresarial",
+          "description": "Cumple con SOC 2 y encriptación de extremo a extremo. Tus datos permanecen seguros mientras construyes la próxima generación de aplicaciones de IA."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Confiado por equipos de IA líderes",
+      "description": "Únete a miles de desarrolladores y empresas que construyen el futuro con nuestra plataforma de IA.",
+      "items": {
+        "modelsDeployed": {
+          "metric": "10M+",
+          "label": "Modelos de IA Desplegados",
+          "description": "Desplegados exitosamente en clientes empresariales en todo el mundo"
+        },
+        "uptime": {
+          "metric": "99.9%",
+          "label": "Tiempo de Actividad",
+          "description": "Confiabilidad de nivel empresarial con monitoreo 24/7"
+        },
+        "responseTime": {
+          "metric": "50ms",
+          "label": "Tiempo de Respuesta",
+          "description": "Inferencia súper rápida con red global de borde"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Amado por desarrolladores de IA en todo el mundo",
+      "description": "Mira lo que dicen los líderes de la industria sobre construir soluciones de IA con Aioneers",
+      "items": {
+        "sarah": {
+          "name": "Sarah Chen",
+          "role": "Investigadora Principal de IA",
+          "company": "TechCorp",
+          "content": "Aioneers ha revolucionado cómo desplegamos modelos de IA. Lo que solía tomar semanas ahora toma minutos. La plataforma es increíblemente intuitiva y poderosa."
+        },
+        "marcus": {
+          "name": "Marcus Rodriguez",
+          "role": "CTO",
+          "company": "DataFlow Inc",
+          "content": "Las características de seguridad empresarial y las herramientas de cumplimiento nos dieron la confianza para migrar toda nuestra tubería de ML. Rendimiento y confiabilidad excepcionales."
+        },
+        "emily": {
+          "name": "Emily Watson",
+          "role": "Ingeniera de ML",
+          "company": "StartupAI",
+          "content": "Como startup, necesitábamos una solución que pudiera escalar con nosotros. Aioneers proporcionó exactamente eso - desde prototipo hasta producción sin problemas."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para transformar tu desarrollo de IA?",
+      "description": "Únete a miles de desarrolladores construyendo el futuro con Aioneers. Comienza tu prueba gratuita hoy.",
+      "startBuilding": "Comenzar a Construir"
+    },
+    "dashboard": {
+      "aiConsole": {
+        "title": "Consola de IA",
+        "subtitle": "Monitoreo en tiempo real",
+        "live": "En vivo",
+        "activeModels": "Modelos Activos",
+        "weeklyGrowth": "+12 esta semana",
+        "modelTraining": "Entrenamiento de Modelo",
+        "inProgress": "En Progreso"
+      },
+      "userAnalytics": {
+        "title": "Análisis de Usuario",
+        "subtitle": "Métricas de rendimiento",
+        "totalUsers": "Usuarios Totales",
+        "trendingUp": "Tendencia al alza del 5.2% este mes",
+        "engagementMetrics": "Métricas de participación de escritorio y móvil"
+      }
+    }
+  },
   "auth": {
     "signIn": "Iniciar sesión",
     "signOut": "Cerrar sesión",
@@ -103,7 +216,11 @@
     "monthly": "Mensual",
     "yearly": "Anual",
     "oneTime": "Pago Único",
-    "secure": "Pago Seguro"
+    "secure": "Pago Seguro",
+    "paymentDemo": "Demo de Pagos",
+    "testIntegration": "Probar integración de Lemon Squeezy con URLs de demostración",
+    "recommended": "Recomendado",
+    "noSubscriptions": "No hay suscripciones"
   },
   "seo": {
     "siteName": "Aioneers",

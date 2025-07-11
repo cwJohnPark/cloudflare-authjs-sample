@@ -10,6 +10,7 @@ import {
   ScrollAnimation,
   StaggeredAnimation,
 } from "@/hooks/use-scroll-animation";
+import { Dictionary } from "@/lib/i18n/types";
 
 type Feature = {
   icon: LucideIcon;
@@ -17,40 +18,40 @@ type Feature = {
   description: string;
 };
 
-const features: Feature[] = [
-  {
-    icon: Brain,
-    title: "Smart AI Models",
-    description:
-      "Access our library of pre-trained models for computer vision, NLP, and more. Deploy instantly with our one-click API integration.",
-  },
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description:
-      "Optimized infrastructure delivers AI predictions in milliseconds. Scale from prototype to production seamlessly.",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description:
-      "SOC 2 compliant with end-to-end encryption. Your data stays secure while you build the next generation of AI applications.",
-  },
-];
+type FeaturesSectionProps = {
+  dictionary: Dictionary;
+};
 
-export function FeaturesSection() {
+export function FeaturesSection({ dictionary }: FeaturesSectionProps) {
+  const features: Feature[] = [
+    {
+      icon: Brain,
+      title: dictionary.landing.features.items.smartAI.title,
+      description: dictionary.landing.features.items.smartAI.description,
+    },
+    {
+      icon: Zap,
+      title: dictionary.landing.features.items.lightningFast.title,
+      description: dictionary.landing.features.items.lightningFast.description,
+    },
+    {
+      icon: Shield,
+      title: dictionary.landing.features.items.enterpriseSecurity.title,
+      description:
+        dictionary.landing.features.items.enterpriseSecurity.description,
+    },
+  ];
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation direction="up" threshold={0.1}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Everything you need to build AI
+              {dictionary.landing.features.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our comprehensive platform provides all the tools, models, and
-              infrastructure you need to create production-ready AI
-              applications.
+              {dictionary.landing.features.description}
             </p>
           </div>
         </ScrollAnimation>

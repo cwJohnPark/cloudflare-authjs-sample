@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, BrainCircuit } from "lucide-react";
 import { DashboardPreview } from "./dashboard-preview";
 import { useEffect, useState } from "react";
+import { Dictionary } from "@/lib/i18n/types";
 
-export function HeroSection() {
+type HeroSectionProps = {
+  dictionary: Dictionary;
+};
+
+export function HeroSection({ dictionary }: HeroSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
 
@@ -36,32 +41,34 @@ export function HeroSection() {
                 className={`flex items-center justify-center lg:justify-start mb-8 hero-text-animate ${isVisible ? "animate" : ""}`}
               >
                 <BrainCircuit className="w-12 h-12 text-primary mr-4" />
-                <h1 className="text-4xl font-bold text-foreground">Aioneers</h1>
+                <h1 className="text-4xl font-bold text-foreground">
+                  {dictionary.landing.hero.brandName}
+                </h1>
               </div>
 
               {/* Main Headline */}
               <div className="staggered-container">
                 <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  Build the future
+                  {dictionary.landing.hero.title1}
                 </h2>
                 <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  with AI-powered
+                  {dictionary.landing.hero.title2}
                 </h2>
                 <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6 leading-tight">
-                  solutions
+                  {dictionary.landing.hero.title3}
                 </h2>
               </div>
 
               {/* Description */}
               <div className="staggered-container mt-8">
                 <p className="text-xl text-muted-foreground mb-4">
-                  Accelerate your AI development with our
+                  {dictionary.landing.hero.description1}
                 </p>
                 <p className="text-xl text-muted-foreground mb-4">
-                  comprehensive platform of pre-trained models,
+                  {dictionary.landing.hero.description2}
                 </p>
                 <p className="text-xl text-muted-foreground mb-8">
-                  powerful APIs, and enterprise-grade infrastructure.
+                  {dictionary.landing.hero.description3}
                 </p>
               </div>
 
@@ -69,7 +76,7 @@ export function HeroSection() {
               <div className="staggered-container">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button size="lg" className="text-lg px-8 py-4">
-                    Start Building
+                    {dictionary.landing.hero.startBuilding}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
@@ -79,18 +86,28 @@ export function HeroSection() {
               <div className="staggered-container mt-12">
                 <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start">
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl font-bold text-primary">10M+</div>
+                    <div className="text-3xl font-bold text-primary">
+                      {dictionary.landing.hero.stats.modelsDeployed}
+                    </div>
                     <div className="text-muted-foreground">
-                      AI Models Deployed
+                      {dictionary.landing.hero.stats.modelsDeployedLabel}
                     </div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl font-bold text-primary">99.9%</div>
-                    <div className="text-muted-foreground">Uptime</div>
+                    <div className="text-3xl font-bold text-primary">
+                      {dictionary.landing.hero.stats.uptime}
+                    </div>
+                    <div className="text-muted-foreground">
+                      {dictionary.landing.hero.stats.uptimeLabel}
+                    </div>
                   </div>
                   <div className="text-center lg:text-left">
-                    <div className="text-3xl font-bold text-primary">50ms</div>
-                    <div className="text-muted-foreground">Response Time</div>
+                    <div className="text-3xl font-bold text-primary">
+                      {dictionary.landing.hero.stats.responseTime}
+                    </div>
+                    <div className="text-muted-foreground">
+                      {dictionary.landing.hero.stats.responseTimeLabel}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,7 +125,7 @@ export function HeroSection() {
                 transition: "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)",
               }}
             >
-              <DashboardPreview />
+              <DashboardPreview dictionary={dictionary} />
             </div>
           </div>
         </div>

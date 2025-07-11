@@ -2,11 +2,11 @@ import { redirect } from "next/navigation";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { AccountClient } from "@/app/[lang]/(dashboard)/account/components/account-client";
 import { auth } from "@/app/auth/config";
-import { LangProps } from "@/app/[lang]/(landing)/page";
 import { SiteHeader } from "@/components/site-header";
 import { drizzleAdapter } from "@/lib/db/context";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { LangProps } from "@/app/[lang]/layout";
 
 export default async function AccountPage({ params }: LangProps) {
   const { lang } = await params;

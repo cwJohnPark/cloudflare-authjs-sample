@@ -2,8 +2,8 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { SiteHeader } from "@/components/site-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DropdownMenuGroup } from "@/components/ui/dropdown-menu";
-import { LangProps } from "@/app/[lang]/(landing)/page";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { LangProps } from "@/app/[lang]/layout";
 
 export default async function SettingsPage({ params }: LangProps) {
   const { lang } = await params;

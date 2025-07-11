@@ -3,7 +3,7 @@ import { BrainCircuit } from "lucide-react";
 import { redirect } from "next/navigation";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { auth } from "@/app/auth/config";
-import { LangProps } from "@/app/[lang]/(landing)/page";
+import { LangProps } from "../layout";
 
 export default async function AuthPage({ params }: LangProps) {
   const { lang } = await params;

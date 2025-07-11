@@ -18,7 +18,7 @@ export const useScrollAnimation = ({
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
-
+  const node = elementRef.current;
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,16 +37,16 @@ export const useScrollAnimation = ({
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
-  }, [threshold, rootMargin, triggerOnce, delay, hasAnimated]);
+  }, [threshold, rootMargin, triggerOnce, delay, hasAnimated, node]);
 
   return { elementRef, isVisible };
 };

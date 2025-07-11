@@ -9,7 +9,6 @@ import { i18n } from "@/lib/i18n/i18n-config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { auth } from "@/app/auth/config";
 import "@/app/globals.css";
-import { LangProps } from "./(landing)/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +47,10 @@ export async function generateStaticParams() {
 type Props = {
   children: React.ReactNode;
   params: Promise<LangProps["params"]>;
+};
+
+export type LangProps = {
+  params: Promise<{ lang: "en" | "ko" | "ja" | "es" | "zh" }>;
 };
 
 export default async function LangLayout({ children, params }: Props) {

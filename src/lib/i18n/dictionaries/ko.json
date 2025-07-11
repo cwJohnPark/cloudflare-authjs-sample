@@ -9,6 +9,119 @@
     "login": "로그인",
     "signup": "회원가입"
   },
+  "landing": {
+    "navigation": {
+      "home": "홈",
+      "product": "제품",
+      "feature": "기능",
+      "pricing": "가격",
+      "signIn": "로그인"
+    },
+    "hero": {
+      "brandName": "Aioneers",
+      "title1": "미래를 구축하세요",
+      "title2": "AI 기반의",
+      "title3": "솔루션으로",
+      "description1": "사전 훈련된 모델, 강력한 API,",
+      "description2": "엔터프라이즈급 인프라를 갖춘",
+      "description3": "포괄적인 플랫폼으로 AI 개발을 가속화하세요.",
+      "startBuilding": "개발 시작하기",
+      "stats": {
+        "modelsDeployed": "1천만+",
+        "modelsDeployedLabel": "AI 모델 배포",
+        "uptime": "99.9%",
+        "uptimeLabel": "가동률",
+        "responseTime": "50ms",
+        "responseTimeLabel": "응답 시간"
+      }
+    },
+    "features": {
+      "title": "AI 구축에 필요한 모든 것",
+      "description": "프로덕션 준비가 완료된 AI 애플리케이션을 만드는 데 필요한 모든 도구, 모델, 인프라를 제공하는 포괄적인 플랫폼입니다.",
+      "items": {
+        "smartAI": {
+          "title": "스마트 AI 모델",
+          "description": "컴퓨터 비전, NLP 등을 위한 사전 훈련된 모델 라이브러리에 액세스하세요. 원클릭 API 통합으로 즉시 배포할 수 있습니다."
+        },
+        "lightningFast": {
+          "title": "번개같이 빠른 속도",
+          "description": "최적화된 인프라가 밀리초 단위로 AI 예측을 제공합니다. 프로토타입에서 프로덕션까지 원활하게 확장하세요."
+        },
+        "enterpriseSecurity": {
+          "title": "엔터프라이즈 보안",
+          "description": "SOC 2 규정 준수 및 종단간 암호화. 차세대 AI 애플리케이션을 구축하는 동안 데이터의 보안을 유지하세요."
+        }
+      }
+    },
+    "benefits": {
+      "title": "선도적인 AI 팀들의 신뢰",
+      "description": "AI 플랫폼으로 미래를 구축하는 수천 명의 개발자와 회사에 합류하세요.",
+      "items": {
+        "modelsDeployed": {
+          "metric": "1천만+",
+          "label": "AI 모델 배포",
+          "description": "전 세계 엔터프라이즈 클라이언트에 성공적으로 배포"
+        },
+        "uptime": {
+          "metric": "99.9%",
+          "label": "가동률",
+          "description": "24/7 모니터링을 통한 엔터프라이즈급 안정성"
+        },
+        "responseTime": {
+          "metric": "50ms",
+          "label": "응답 시간",
+          "description": "글로벌 엣지 네트워크를 통한 초고속 추론"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "전 세계 AI 개발자들이 사랑하는 플랫폼",
+      "description": "Aioneers로 AI 솔루션을 구축하는 것에 대해 업계 리더들이 말하는 것을 확인하세요",
+      "items": {
+        "sarah": {
+          "name": "Sarah Chen",
+          "role": "수석 AI 연구원",
+          "company": "TechCorp",
+          "content": "Aioneers는 AI 모델 배포 방식을 혁신했습니다. 몇 주가 걸리던 일이 이제는 몇 분이면 됩니다. 플랫폼이 놀라울 정도로 직관적이고 강력합니다."
+        },
+        "marcus": {
+          "name": "Marcus Rodriguez",
+          "role": "CTO",
+          "company": "DataFlow Inc",
+          "content": "엔터프라이즈 보안 기능과 컴플라이언스 도구 덕분에 전체 ML 파이프라인을 마이그레이션할 수 있는 자신감을 얻었습니다. 뛰어난 성능과 안정성입니다."
+        },
+        "emily": {
+          "name": "Emily Watson",
+          "role": "ML 엔지니어",
+          "company": "StartupAI",
+          "content": "스타트업으로서 우리와 함께 성장할 수 있는 솔루션이 필요했습니다. Aioneers는 프로토타입부터 프로덕션까지 원활하게 확장할 수 있는 정확한 해답을 제공했습니다."
+        }
+      }
+    },
+    "cta": {
+      "title": "AI 개발을 혁신할 준비가 되셨나요?",
+      "description": "Aioneers와 함께 미래를 구축하는 수천 명의 개발자에 합류하세요. 지금 무료 체험을 시작하세요.",
+      "startBuilding": "개발 시작하기"
+    },
+    "dashboard": {
+      "aiConsole": {
+        "title": "AI 콘솔",
+        "subtitle": "실시간 모니터링",
+        "live": "실시간",
+        "activeModels": "활성 모델",
+        "weeklyGrowth": "+12 이번 주",
+        "modelTraining": "모델 훈련",
+        "inProgress": "진행 중"
+      },
+      "userAnalytics": {
+        "title": "사용자 분석",
+        "subtitle": "성능 지표",
+        "totalUsers": "총 사용자",
+        "trendingUp": "이번 달 5.2% 증가",
+        "engagementMetrics": "데스크톱 및 모바일 참여 지표"
+      }
+    }
+  },
   "auth": {
     "signIn": "로그인",
     "signOut": "로그아웃",
@@ -103,7 +216,11 @@
     "monthly": "월간",
     "yearly": "연간",
     "oneTime": "일회성 결제",
-    "secure": "안전한 결제"
+    "secure": "안전한 결제",
+    "paymentDemo": "결제 데모",
+    "testIntegration": "데모 체크아웃 URL로 Lemon Squeezy 통합 테스트",
+    "recommended": "추천",
+    "noSubscriptions": "구독이 없습니다"
   },
   "seo": {
     "siteName": "Aioneers",

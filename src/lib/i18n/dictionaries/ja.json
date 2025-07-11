@@ -9,6 +9,119 @@
     "login": "ログイン",
     "signup": "サインアップ"
   },
+  "landing": {
+    "navigation": {
+      "home": "ホーム",
+      "product": "製品",
+      "feature": "機能",
+      "pricing": "価格",
+      "signIn": "サインイン"
+    },
+    "hero": {
+      "brandName": "Aioneers",
+      "title1": "未来を構築",
+      "title2": "AI駆動の",
+      "title3": "ソリューションで",
+      "description1": "事前訓練済みモデル、強力なAPI、",
+      "description2": "エンタープライズグレードのインフラを備えた",
+      "description3": "包括的なプラットフォームでAI開発を加速させます。",
+      "startBuilding": "開発を始める",
+      "stats": {
+        "modelsDeployed": "1000万+",
+        "modelsDeployedLabel": "AIモデル展開",
+        "uptime": "99.9%",
+        "uptimeLabel": "稼働率",
+        "responseTime": "50ms",
+        "responseTimeLabel": "応答時間"
+      }
+    },
+    "features": {
+      "title": "AIの構築に必要なすべて",
+      "description": "本番環境対応のAIアプリケーションを作成するために必要なすべてのツール、モデル、インフラを提供する包括的なプラットフォームです。",
+      "items": {
+        "smartAI": {
+          "title": "スマートAIモデル",
+          "description": "コンピュータビジョン、NLPなどの事前訓練済みモデルライブラリにアクセス。ワンクリックAPI統合で即座に展開できます。"
+        },
+        "lightningFast": {
+          "title": "超高速",
+          "description": "最適化されたインフラがミリ秒単位でAI予測を提供。プロトタイプから本番環境まで seamlessly スケール。"
+        },
+        "enterpriseSecurity": {
+          "title": "エンタープライズセキュリティ",
+          "description": "SOC 2準拠とエンドツーエンド暗号化。次世代AIアプリケーションを構築しながらデータの安全性を維持。"
+        }
+      }
+    },
+    "benefits": {
+      "title": "主要なAIチームに信頼される",
+      "description": "AIプラットフォームで未来を構築する数千の開発者や企業に参加してください。",
+      "items": {
+        "modelsDeployed": {
+          "metric": "1000万+",
+          "label": "AIモデル展開",
+          "description": "世界中のエンタープライズクライアントに成功裏に展開"
+        },
+        "uptime": {
+          "metric": "99.9%",
+          "label": "稼働率",
+          "description": "24/7監視によるエンタープライズグレードの信頼性"
+        },
+        "responseTime": {
+          "metric": "50ms",
+          "label": "応答時間",
+          "description": "グローバルエッジネットワークによる超高速推論"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "世界中のAI開発者に愛されています",
+      "description": "AioneersでAIソリューションを構築することについて業界リーダーが語ることをご覧ください",
+      "items": {
+        "sarah": {
+          "name": "Sarah Chen",
+          "role": "首席AI研究員",
+          "company": "TechCorp",
+          "content": "AioneersはAIモデル展開の方法を革新しました。数週間かかっていたことが今では数分で完了します。プラットフォームは驚くほど直感的で強力です。"
+        },
+        "marcus": {
+          "name": "Marcus Rodriguez",
+          "role": "CTO",
+          "company": "DataFlow Inc",
+          "content": "エンタープライズセキュリティ機能とコンプライアンスツールにより、MLパイプライン全体を移行する自信を得ることができました。優れた性能と信頼性です。"
+        },
+        "emily": {
+          "name": "Emily Watson",
+          "role": "MLエンジニア",
+          "company": "StartupAI",
+          "content": "スタートアップとして、私たちと一緒に成長できるソリューションが必要でした。Aioneersはプロトタイプから本番環境まで seamlessly 対応する正確なソリューションを提供しました。"
+        }
+      }
+    },
+    "cta": {
+      "title": "AI開発を変革する準備はできていますか？",
+      "description": "Aioneersと共に未来を構築する数千の開発者に参加してください。今すぐ無料トライアルを開始しましょう。",
+      "startBuilding": "開発を始める"
+    },
+    "dashboard": {
+      "aiConsole": {
+        "title": "AIコンソール",
+        "subtitle": "リアルタイム監視",
+        "live": "ライブ",
+        "activeModels": "アクティブモデル",
+        "weeklyGrowth": "+12 今週",
+        "modelTraining": "モデル訓練",
+        "inProgress": "進行中"
+      },
+      "userAnalytics": {
+        "title": "ユーザー分析",
+        "subtitle": "パフォーマンス指標",
+        "totalUsers": "総ユーザー数",
+        "trendingUp": "今月5.2%増加",
+        "engagementMetrics": "デスクトップとモバイルのエンゲージメント指標"
+      }
+    }
+  },
   "auth": {
     "signIn": "サインイン",
     "signOut": "サインアウト",
@@ -103,7 +216,11 @@
     "monthly": "月間",
     "yearly": "年間",
     "oneTime": "一回限りの支払い",
-    "secure": "安全な決済"
+    "secure": "安全な決済",
+    "paymentDemo": "決済デモ",
+    "testIntegration": "デモチェックアウトURLでLemon Squeezy統合をテスト",
+    "recommended": "おすすめ",
+    "noSubscriptions": "購読はありません"
   },
   "seo": {
     "siteName": "Aioneers",

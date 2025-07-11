@@ -9,6 +9,119 @@
     "login": "登录",
     "signup": "注册"
   },
+  "landing": {
+    "navigation": {
+      "home": "首页",
+      "product": "产品",
+      "feature": "功能",
+      "pricing": "定价",
+      "signIn": "登录"
+    },
+    "hero": {
+      "brandName": "Aioneers",
+      "title1": "构建未来",
+      "title2": "基于AI驱动的",
+      "title3": "解决方案",
+      "description1": "通过我们的预训练模型、",
+      "description2": "强大的API和企业级基础设施",
+      "description3": "综合平台加速您的AI开发。",
+      "startBuilding": "开始构建",
+      "stats": {
+        "modelsDeployed": "1千万+",
+        "modelsDeployedLabel": "AI模型部署",
+        "uptime": "99.9%",
+        "uptimeLabel": "正常运行时间",
+        "responseTime": "50ms",
+        "responseTimeLabel": "响应时间"
+      }
+    },
+    "features": {
+      "title": "构建AI所需的一切",
+      "description": "我们的综合平台提供创建生产就绪AI应用程序所需的所有工具、模型和基础设施。",
+      "items": {
+        "smartAI": {
+          "title": "智能AI模型",
+          "description": "访问我们的预训练模型库，涵盖计算机视觉、NLP等领域。通过我们的一键API集成立即部署。"
+        },
+        "lightningFast": {
+          "title": "闪电般快速",
+          "description": "优化的基础设施在毫秒内提供AI预测。从原型到生产无缝扩展。"
+        },
+        "enterpriseSecurity": {
+          "title": "企业安全",
+          "description": "符合SOC 2标准，端到端加密。在构建下一代AI应用程序时保持数据安全。"
+        }
+      }
+    },
+    "benefits": {
+      "title": "受到顶级AI团队信赖",
+      "description": "加入数千名开发者和公司，使用我们的AI平台构建未来。",
+      "items": {
+        "modelsDeployed": {
+          "metric": "1千万+",
+          "label": "AI模型部署",
+          "description": "成功部署在全球企业客户中"
+        },
+        "uptime": {
+          "metric": "99.9%",
+          "label": "正常运行时间",
+          "description": "24/7监控的企业级可靠性"
+        },
+        "responseTime": {
+          "metric": "50ms",
+          "label": "响应时间",
+          "description": "通过全球边缘网络实现超快推理"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "深受全球AI开发者喜爱",
+      "description": "看看行业领袖对使用Aioneers构建AI解决方案的评价",
+      "items": {
+        "sarah": {
+          "name": "Sarah Chen",
+          "role": "首席AI研究员",
+          "company": "TechCorp",
+          "content": "Aioneers革命性地改变了我们部署AI模型的方式。过去需要几周的工作现在只需几分钟。该平台极其直观且功能强大。"
+        },
+        "marcus": {
+          "name": "Marcus Rodriguez",
+          "role": "首席技术官",
+          "company": "DataFlow Inc",
+          "content": "企业安全功能和合规工具让我们有信心迁移整个ML管道。性能和可靠性都非常出色。"
+        },
+        "emily": {
+          "name": "Emily Watson",
+          "role": "ML工程师",
+          "company": "StartupAI",
+          "content": "作为一家初创公司，我们需要一个能够与我们一起成长的解决方案。Aioneers提供了正确的解决方案 - 从原型到生产无缝对接。"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备好转变您的AI开发了吗？",
+      "description": "加入数千名使用Aioneers构建未来的开发者。立即开始您的免费试用。",
+      "startBuilding": "开始构建"
+    },
+    "dashboard": {
+      "aiConsole": {
+        "title": "AI控制台",
+        "subtitle": "实时监控",
+        "live": "实时",
+        "activeModels": "活动模型",
+        "weeklyGrowth": "+12 本周",
+        "modelTraining": "模型训练",
+        "inProgress": "进行中"
+      },
+      "userAnalytics": {
+        "title": "用户分析",
+        "subtitle": "性能指标",
+        "totalUsers": "总用户数",
+        "trendingUp": "本月增长5.2%",
+        "engagementMetrics": "桌面和移动参与度指标"
+      }
+    }
+  },
   "auth": {
     "signIn": "登录",
     "signOut": "退出登录",
@@ -103,7 +216,11 @@
     "monthly": "月付",
     "yearly": "年付",
     "oneTime": "一次性付款",
-    "secure": "安全付款"
+    "secure": "安全付款",
+    "paymentDemo": "付款演示",
+    "testIntegration": "使用演示结账URL测试Lemon Squeezy集成",
+    "recommended": "推荐",
+    "noSubscriptions": "没有订阅"
   },
   "seo": {
     "siteName": "Aioneers",

@@ -9,6 +9,119 @@ export type Dictionary = {
     login: string;
     signup: string;
   };
+  landing: {
+    navigation: {
+      home: string;
+      product: string;
+      feature: string;
+      pricing: string;
+      signIn: string;
+    };
+    hero: {
+      brandName: string;
+      title1: string;
+      title2: string;
+      title3: string;
+      description1: string;
+      description2: string;
+      description3: string;
+      startBuilding: string;
+      stats: {
+        modelsDeployed: string;
+        modelsDeployedLabel: string;
+        uptime: string;
+        uptimeLabel: string;
+        responseTime: string;
+        responseTimeLabel: string;
+      };
+    };
+    features: {
+      title: string;
+      description: string;
+      items: {
+        smartAI: {
+          title: string;
+          description: string;
+        };
+        lightningFast: {
+          title: string;
+          description: string;
+        };
+        enterpriseSecurity: {
+          title: string;
+          description: string;
+        };
+      };
+    };
+    benefits: {
+      title: string;
+      description: string;
+      items: {
+        modelsDeployed: {
+          metric: string;
+          label: string;
+          description: string;
+        };
+        uptime: {
+          metric: string;
+          label: string;
+          description: string;
+        };
+        responseTime: {
+          metric: string;
+          label: string;
+          description: string;
+        };
+      };
+    };
+    testimonials: {
+      title: string;
+      description: string;
+      items: {
+        sarah: {
+          name: string;
+          role: string;
+          company: string;
+          content: string;
+        };
+        marcus: {
+          name: string;
+          role: string;
+          company: string;
+          content: string;
+        };
+        emily: {
+          name: string;
+          role: string;
+          company: string;
+          content: string;
+        };
+      };
+    };
+    cta: {
+      title: string;
+      description: string;
+      startBuilding: string;
+    };
+    dashboard: {
+      aiConsole: {
+        title: string;
+        subtitle: string;
+        live: string;
+        activeModels: string;
+        weeklyGrowth: string;
+        modelTraining: string;
+        inProgress: string;
+      };
+      userAnalytics: {
+        title: string;
+        subtitle: string;
+        totalUsers: string;
+        trendingUp: string;
+        engagementMetrics: string;
+      };
+    };
+  };
   auth: {
     signIn: string;
     signOut: string;
@@ -101,6 +214,10 @@ export type Dictionary = {
     yearly: string;
     oneTime: string;
     secure: string;
+    paymentDemo: string;
+    testIntegration: string;
+    recommended: string;
+    noSubscriptions: string;
   };
   seo: {
     siteName: string;

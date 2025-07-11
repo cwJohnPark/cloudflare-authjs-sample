@@ -1,30 +1,22 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { Header } from "./header";
 import { HeroSection } from "./hero-section";
 import { FeaturesSection } from "./features-section";
 import { BenefitsSection } from "./benefits-section";
 import { TestimonialsSection } from "./testimonials-section";
 import { CTASection } from "./cta-section";
+import { Dictionary } from "@/lib/i18n/types";
 
-export default function Landing() {
-  const router = useRouter();
+type LandingProps = {
+  dictionary: Dictionary;
+};
 
-  const handleNavigate = (url: string) => {
-    router.push(url);
-  };
-
+export default function Landing({ dictionary }: LandingProps) {
   return (
-    <div className="min-h-screen bg-background">
-      <Header onNavigate={handleNavigate} />
-      <main className="page-transition">
-        <HeroSection />
-        <FeaturesSection />
-        <BenefitsSection />
-        <TestimonialsSection />
-        <CTASection onNavigate={handleNavigate} />
-      </main>
-    </div>
+    <>
+      <HeroSection dictionary={dictionary} />
+      <FeaturesSection dictionary={dictionary} />
+      <BenefitsSection dictionary={dictionary} />
+      <TestimonialsSection dictionary={dictionary} />
+      <CTASection dictionary={dictionary} />
+    </>
   );
 }

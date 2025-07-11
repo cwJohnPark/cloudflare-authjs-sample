@@ -5,8 +5,8 @@ import { generateMetadataFromDictionary } from "@/lib/seo";
 import { Metadata } from "next";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
-import { LangProps } from "@/app/[lang]/(landing)/page";
 import data from "./data.json";
+import { LangProps } from "@/app/[lang]/layout";
 
 export async function generateMetadata({
   params,

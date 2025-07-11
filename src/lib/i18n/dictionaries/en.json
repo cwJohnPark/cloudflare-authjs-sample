@@ -9,6 +9,119 @@
     "login": "Login",
     "signup": "Sign up"
   },
+  "landing": {
+    "navigation": {
+      "home": "Home",
+      "product": "Product",
+      "feature": "Feature",
+      "pricing": "Pricing",
+      "signIn": "Sign in"
+    },
+    "hero": {
+      "brandName": "Aioneers",
+      "title1": "Build the future",
+      "title2": "with AI-powered",
+      "title3": "solutions",
+      "description1": "Accelerate your AI development with our",
+      "description2": "comprehensive platform of pre-trained models,",
+      "description3": "powerful APIs, and enterprise-grade infrastructure.",
+      "startBuilding": "Start Building",
+      "stats": {
+        "modelsDeployed": "10M+",
+        "modelsDeployedLabel": "AI Models Deployed",
+        "uptime": "99.9%",
+        "uptimeLabel": "Uptime",
+        "responseTime": "50ms",
+        "responseTimeLabel": "Response Time"
+      }
+    },
+    "features": {
+      "title": "Everything you need to build AI",
+      "description": "Our comprehensive platform provides all the tools, models, and infrastructure you need to create production-ready AI applications.",
+      "items": {
+        "smartAI": {
+          "title": "Smart AI Models",
+          "description": "Access our library of pre-trained models for computer vision, NLP, and more. Deploy instantly with our one-click API integration."
+        },
+        "lightningFast": {
+          "title": "Lightning Fast",
+          "description": "Optimized infrastructure delivers AI predictions in milliseconds. Scale from prototype to production seamlessly."
+        },
+        "enterpriseSecurity": {
+          "title": "Enterprise Security",
+          "description": "SOC 2 compliant with end-to-end encryption. Your data stays secure while you build the next generation of AI applications."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Trusted by leading AI teams",
+      "description": "Join thousands of developers and companies building the future with our AI platform.",
+      "items": {
+        "modelsDeployed": {
+          "metric": "10M+",
+          "label": "AI Models Deployed",
+          "description": "Successfully deployed across enterprise clients worldwide"
+        },
+        "uptime": {
+          "metric": "99.9%",
+          "label": "Uptime",
+          "description": "Enterprise-grade reliability with 24/7 monitoring"
+        },
+        "responseTime": {
+          "metric": "50ms",
+          "label": "Response Time",
+          "description": "Lightning-fast inference with global edge network"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Loved by AI developers worldwide",
+      "description": "See what industry leaders are saying about building AI solutions with Aioneers",
+      "items": {
+        "sarah": {
+          "name": "Sarah Chen",
+          "role": "Lead AI Researcher",
+          "company": "TechCorp",
+          "content": "Aioneers has revolutionized how we deploy AI models. What used to take weeks now takes minutes. The platform is incredibly intuitive and powerful."
+        },
+        "marcus": {
+          "name": "Marcus Rodriguez",
+          "role": "CTO",
+          "company": "DataFlow Inc",
+          "content": "The enterprise security features and compliance tools gave us the confidence to migrate our entire ML pipeline. Outstanding performance and reliability."
+        },
+        "emily": {
+          "name": "Emily Watson",
+          "role": "ML Engineer",
+          "company": "StartupAI",
+          "content": "As a startup, we needed a solution that could scale with us. Aioneers provided exactly that - from prototype to production seamlessly."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to transform your AI development?",
+      "description": "Join thousands of developers building the future with Aioneers. Start your free trial today.",
+      "startBuilding": "Start Building"
+    },
+    "dashboard": {
+      "aiConsole": {
+        "title": "AI Console",
+        "subtitle": "Real-time monitoring",
+        "live": "Live",
+        "activeModels": "Active Models",
+        "weeklyGrowth": "+12 this week",
+        "modelTraining": "Model Training",
+        "inProgress": "In Progress"
+      },
+      "userAnalytics": {
+        "title": "User Analytics",
+        "subtitle": "Performance metrics",
+        "totalUsers": "Total Users",
+        "trendingUp": "Trending up by 5.2% this month",
+        "engagementMetrics": "Desktop & Mobile engagement metrics"
+      }
+    }
+  },
   "auth": {
     "signIn": "Sign In",
     "signOut": "Sign Out",
@@ -103,7 +216,11 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "oneTime": "One-time Payment",
-    "secure": "Secure Payment"
+    "secure": "Secure Payment",
+    "paymentDemo": "Payment Demo",
+    "testIntegration": "Test Lemon Squeezy integration with demo checkout URLs",
+    "recommended": "Recommended",
+    "noSubscriptions": "No subscriptions"
   },
   "seo": {
     "siteName": "Aioneers",

@@ -32,7 +32,7 @@ export function BillingsList({ dictionary, products }: BillingsListProps) {
       description: product.attributes.description,
       price: product.attributes.price,
       priceFormatted: product.attributes.price_formatted,
-      badge: product.attributes.name === "Pro" ? "Recommended" : "",
+      badge: product.attributes.name === "Pro" ? payments.recommended : "",
       checkoutUrl:
         product.attributes.buy_now_url + "?checkout[custom][user_id]=" + userId,
     };
@@ -41,10 +41,8 @@ export function BillingsList({ dictionary, products }: BillingsListProps) {
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold">Payment Demo</h2>
-        <p className="text-muted-foreground">
-          Test Lemon Squeezy integration with demo checkout URLs
-        </p>
+        <h2 className="text-2xl font-bold">{payments.paymentDemo}</h2>
+        <p className="text-muted-foreground">{payments.testIntegration}</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">

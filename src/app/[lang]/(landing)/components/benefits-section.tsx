@@ -4,6 +4,7 @@ import {
   ScrollAnimation,
   StaggeredAnimation,
 } from "@/hooks/use-scroll-animation";
+import { Dictionary } from "@/lib/i18n/types";
 
 type Benefit = {
   icon: LucideIcon;
@@ -12,39 +13,42 @@ type Benefit = {
   description: string;
 };
 
-const benefits: Benefit[] = [
-  {
-    icon: TrendingUp,
-    metric: "10M+",
-    label: "AI Models Deployed",
-    description: "Successfully deployed across enterprise clients worldwide",
-  },
-  {
-    icon: Clock,
-    metric: "99.9%",
-    label: "Uptime",
-    description: "Enterprise-grade reliability with 24/7 monitoring",
-  },
-  {
-    icon: Shield,
-    metric: "50ms",
-    label: "Response Time",
-    description: "Lightning-fast inference with global edge network",
-  },
-];
+type BenefitsSectionProps = {
+  dictionary: Dictionary;
+};
 
-export function BenefitsSection() {
+export function BenefitsSection({ dictionary }: BenefitsSectionProps) {
+  const benefits: Benefit[] = [
+    {
+      icon: TrendingUp,
+      metric: dictionary.landing.benefits.items.modelsDeployed.metric,
+      label: dictionary.landing.benefits.items.modelsDeployed.label,
+      description: dictionary.landing.benefits.items.modelsDeployed.description,
+    },
+    {
+      icon: Clock,
+      metric: dictionary.landing.benefits.items.uptime.metric,
+      label: dictionary.landing.benefits.items.uptime.label,
+      description: dictionary.landing.benefits.items.uptime.description,
+    },
+    {
+      icon: Shield,
+      metric: dictionary.landing.benefits.items.responseTime.metric,
+      label: dictionary.landing.benefits.items.responseTime.label,
+      description: dictionary.landing.benefits.items.responseTime.description,
+    },
+  ];
+
   return (
     <section className="py-20 bg-accent/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollAnimation direction="up" threshold={0.1}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Trusted by leading AI teams
+              {dictionary.landing.benefits.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of developers and companies building the future
-              with our AI platform.
+              {dictionary.landing.benefits.description}
             </p>
           </div>
         </ScrollAnimation>
