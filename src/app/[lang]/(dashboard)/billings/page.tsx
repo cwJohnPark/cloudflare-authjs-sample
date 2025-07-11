@@ -1,4 +1,4 @@
-import { LangProps } from "@/app/[lang]/page";
+import { LangProps } from "@/app/[lang]/(landing)/page";
 import { getProductList } from "@/app/api/payments/products/client";
 import { getUserSubscriptions } from "@/app/api/payments/subscriptions/service";
 import { auth } from "@/app/auth/config";

@@ -9,7 +9,7 @@ import { i18n } from "@/lib/i18n/i18n-config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { auth } from "@/app/auth/config";
 import "@/app/globals.css";
-import { LangProps } from "./page";
+import { LangProps } from "./(landing)/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
