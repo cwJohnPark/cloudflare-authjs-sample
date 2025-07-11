@@ -9,14 +9,12 @@ const nextConfig: NextConfig = {
   crossOrigin: "anonymous",
   allowedDevOrigins: ["http://localhost:3000"],
   env: {
-    // 필수 환경변수 검증
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY:
       process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY,
   },
 };
 
-// 필수 환경변수 검증 함수
 function validateRequiredEnvVars() {
   const requiredEnvVars = {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
@@ -55,7 +53,6 @@ function validateRequiredEnvVars() {
   console.log("✅ All required environment variables are set");
 }
 
-// 환경변수 검증 실행
 validateRequiredEnvVars();
 
 export default nextConfig;
