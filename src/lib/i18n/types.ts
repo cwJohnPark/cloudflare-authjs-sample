@@ -218,6 +218,19 @@ export type Dictionary = {
     testIntegration: string;
     recommended: string;
     noSubscriptions: string;
+    // Billing page specific
+    mySubscriptions: string;
+    activeSubscriptions: string;
+    noActiveSubscriptions: string;
+    status: string;
+    product: string;
+    created: string;
+    endsAt: string;
+    renewsAt: string;
+    cancelled: string;
+    active: string;
+    expired: string;
+    trial: string;
   };
   seo: {
     siteName: string;

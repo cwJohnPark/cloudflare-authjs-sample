@@ -220,7 +220,19 @@
     "paymentDemo": "Demo de Pagos",
     "testIntegration": "Probar integración de Lemon Squeezy con URLs de demostración",
     "recommended": "Recomendado",
-    "noSubscriptions": "No hay suscripciones"
+    "noSubscriptions": "No hay suscripciones",
+    "mySubscriptions": "Mis Suscripciones",
+    "activeSubscriptions": "Suscripciones Activas",
+    "noActiveSubscriptions": "No se encontraron suscripciones activas",
+    "status": "Estado",
+    "product": "Producto",
+    "created": "Fecha de Inicio",
+    "endsAt": "Termina En",
+    "renewsAt": "Se Renueva En",
+    "cancelled": "Cancelado",
+    "active": "Activo",
+    "expired": "Expirado",
+    "trial": "Prueba"
   },
   "seo": {
     "siteName": "Aioneers",

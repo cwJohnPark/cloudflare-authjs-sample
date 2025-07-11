@@ -220,7 +220,19 @@
     "paymentDemo": "Payment Demo",
     "testIntegration": "Test Lemon Squeezy integration with demo checkout URLs",
     "recommended": "Recommended",
-    "noSubscriptions": "No subscriptions"
+    "noSubscriptions": "No subscriptions",
+    "mySubscriptions": "My Subscriptions",
+    "activeSubscriptions": "Active Subscriptions",
+    "noActiveSubscriptions": "No active subscriptions found",
+    "status": "Status",
+    "product": "Product",
+    "created": "Start Date",
+    "endsAt": "Ends At",
+    "renewsAt": "Renews At",
+    "cancelled": "Cancelled",
+    "active": "Active",
+    "expired": "Expired",
+    "trial": "Trial"
   },
   "seo": {
     "siteName": "Aioneers",

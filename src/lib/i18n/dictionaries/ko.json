@@ -220,7 +220,19 @@
     "paymentDemo": "결제 데모",
     "testIntegration": "데모 체크아웃 URL로 Lemon Squeezy 통합 테스트",
     "recommended": "추천",
-    "noSubscriptions": "구독이 없습니다"
+    "noSubscriptions": "구독이 없습니다",
+    "mySubscriptions": "내 구독",
+    "activeSubscriptions": "활성 구독",
+    "noActiveSubscriptions": "활성 구독이 없습니다",
+    "status": "상태",
+    "product": "제품",
+    "created": "시작일",
+    "endsAt": "종료일",
+    "renewsAt": "갱신일",
+    "cancelled": "취소됨",
+    "active": "활성",
+    "expired": "만료됨",
+    "trial": "체험"
   },
   "seo": {
     "siteName": "Aioneers",

@@ -220,7 +220,19 @@
     "paymentDemo": "決済デモ",
     "testIntegration": "デモチェックアウトURLでLemon Squeezy統合をテスト",
     "recommended": "おすすめ",
-    "noSubscriptions": "購読はありません"
+    "noSubscriptions": "購読はありません",
+    "mySubscriptions": "マイ サブスクリプション",
+    "activeSubscriptions": "アクティブ サブスクリプション",
+    "noActiveSubscriptions": "アクティブなサブスクリプションが見つかりません",
+    "status": "ステータス",
+    "product": "製品",
+    "created": "開始日",
+    "endsAt": "終了日",
+    "renewsAt": "更新日",
+    "cancelled": "キャンセル済み",
+    "active": "アクティブ",
+    "expired": "期限切れ",
+    "trial": "トライアル"
   },
   "seo": {
     "siteName": "Aioneers",

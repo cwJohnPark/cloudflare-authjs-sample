@@ -220,7 +220,19 @@
     "paymentDemo": "付款演示",
     "testIntegration": "使用演示结账URL测试Lemon Squeezy集成",
     "recommended": "推荐",
-    "noSubscriptions": "没有订阅"
+    "noSubscriptions": "没有订阅",
+    "mySubscriptions": "我的订阅",
+    "activeSubscriptions": "活跃订阅",
+    "noActiveSubscriptions": "未找到活跃的订阅",
+    "status": "状态",
+    "product": "产品",
+    "created": "开始日期",
+    "endsAt": "结束时间",
+    "renewsAt": "续费时间",
+    "cancelled": "已取消",
+    "active": "活跃",
+    "expired": "已过期",
+    "trial": "试用"
   },
   "seo": {
     "siteName": "Aioneers",
