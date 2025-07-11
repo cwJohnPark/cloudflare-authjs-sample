@@ -26,7 +26,6 @@ import {
 } from "@/components/ui/sidebar";
 import { Dictionary } from "@/lib/i18n/types";
 import { signOut } from "next-auth/react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export function NavUser({
