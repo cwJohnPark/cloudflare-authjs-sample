@@ -101,7 +101,6 @@ export type Dictionary = {
     yearly: string;
     oneTime: string;
     secure: string;
-    poweredBy: string;
   };
   seo: {
     siteName: string;

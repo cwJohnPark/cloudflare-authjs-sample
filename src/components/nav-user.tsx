@@ -24,9 +24,10 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { Dictionary } from "@/lib/i18n/types";
+import { signOut } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function NavUser({
   user,
@@ -48,6 +49,10 @@ export function NavUser({
 
   const handleAccountClick = () => {
     router.push(`/${dict.lang}/account`);
+  };
+
+  const handleBillingClick = () => {
+    router.push(`/${dict.lang}/billings`);
   };
 
   return (
@@ -98,7 +103,7 @@ export function NavUser({
                 <UserCircleIcon />
                 {dict?.navigation?.account}
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={handleBillingClick}>
                 <CreditCardIcon />
                 {dict?.navigation?.billing}
               </DropdownMenuItem>

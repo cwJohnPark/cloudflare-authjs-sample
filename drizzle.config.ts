@@ -2,8 +2,11 @@ import logger from "@/lib/logger";
 import { defineConfig } from "drizzle-kit";
 import fs from "node:fs";
 import path from "node:path";
+import { loadEnvConfig } from "@next/env";
 
-logger.info("drizzle.config", "env=", process.env.NODE_ENV);
+const projectDir = process.cwd();
+loadEnvConfig(projectDir);
+logger.info(`start to setup drizzle.config env='${process.env.NODE_ENV}'`);
 
 export default defineConfig({
   schema: "./src/db/schema.ts",
@@ -14,7 +17,7 @@ export default defineConfig({
         driver: "d1-http",
         dbCredentials: {
           accountId: process.env.CLOUDFLARE_D1_ACCOUNT_ID,
-          databaseId: process.env.DATABASE,
+          databaseId: process.env.CLOUDFLARE_D1_DATABASE_ID,
           token: process.env.CLOUDFLARE_D1_API_TOKEN,
         },
       }
