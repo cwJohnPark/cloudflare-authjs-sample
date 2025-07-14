@@ -9,7 +9,7 @@ type LandingProps = {
   dictionary: Dictionary;
 };
 
-export default function Landing({ dictionary }: LandingProps) {
+export default function LandingMain({ dictionary }: LandingProps) {
   return (
     <>
       <HeroSection dictionary={dictionary} />

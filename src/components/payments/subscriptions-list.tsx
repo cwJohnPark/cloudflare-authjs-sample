@@ -16,9 +16,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 import type { Dictionary } from "@/lib/i18n/types";
 import { UserSubscription } from "@/db/schema";
 import { formatDate } from "@/lib/utils";
+import { useState } from "react";
+import { toast } from "sonner";
+import { redirect } from "next/navigation";
+import { ArrowRightIcon } from "lucide-react";
 
 interface SubscriptionsListProps {
   dictionary: Dictionary;
@@ -30,6 +35,46 @@ export function SubscriptionsList({
   subscriptions,
 }: SubscriptionsListProps) {
   const { payments } = dictionary;
+  const [cancellingSubscription, setCancellingSubscription] = useState<
+    string | null
+  >(null);
+
+  const handleCancelSubscription = async (subscriptionId: string) => {
+    if (!confirm(payments.confirmCancel)) {
+      return;
+    }
+
+    setCancellingSubscription(subscriptionId);
+
+    try {
+      const response = await fetch("/api/payments/subscriptions", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subscriptionId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to cancel subscription");
+      }
+
+      toast.success(payments.subscriptionCancelled);
+      // 페이지를 새로고침하여 변경된 구독 상태를 반영
+      window.location.reload();
+    } catch (error) {
+      console.error("Error cancelling subscription:", error);
+      toast.error(payments.cancelFailed);
+    } finally {
+      setCancellingSubscription(null);
+    }
+  };
+
+  const canCancelSubscription = (subscription: UserSubscription) => {
+    return subscription.status === "active" && !subscription.cancelled;
+  };
 
   const getStatusBadge = (status: string, cancelled: boolean | null) => {
     if (cancelled) {
@@ -58,16 +103,29 @@ export function SubscriptionsList({
 
   if (subscriptions.length === 0) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle>{payments.activeSubscriptions}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground text-center py-8">
-            {payments.noActiveSubscriptions}
-          </p>
-        </CardContent>
-      </Card>
+      <>
+        <Card>
+          <CardHeader>
+            <CardTitle>{payments.activeSubscriptions}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground text-center py-8">
+              {payments.noActiveSubscriptions}
+            </p>
+
+            <div className="flex justify-center">
+              <Button
+                variant="outline"
+                className="w-max mx-auto"
+                onClick={() => redirect("/pricing")}
+              >
+                <ArrowRightIcon className="w-4 h-4" />
+                {payments.buyNow}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </>
     );
   }
 
@@ -87,6 +145,7 @@ export function SubscriptionsList({
                 <TableHead>{payments.created}</TableHead>
                 <TableHead>{payments.endsAt}</TableHead>
                 <TableHead>{payments.renewsAt}</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -114,6 +173,25 @@ export function SubscriptionsList({
                   <TableCell>{formatDateTime(subscription.ends_at)}</TableCell>
                   <TableCell>
                     {formatDateTime(subscription.renews_at)}
+                  </TableCell>
+                  <TableCell>
+                    {canCancelSubscription(subscription) && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          handleCancelSubscription(subscription.subscription_id)
+                        }
+                        disabled={
+                          cancellingSubscription ===
+                          subscription.subscription_id
+                        }
+                      >
+                        {cancellingSubscription === subscription.subscription_id
+                          ? payments.processing
+                          : payments.cancelSubscription}
+                      </Button>
+                    )}
                   </TableCell>
                 </TableRow>
               ))}

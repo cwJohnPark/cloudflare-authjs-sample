@@ -232,6 +232,12 @@ export type Dictionary = {
     active: string;
     expired: string;
     trial: string;
+    cancelSubscription: string;
+    confirmCancel: string;
+    cancelConfirm: string;
+    cancelMessage: string;
+    subscriptionCancelled: string;
+    cancelFailed: string;
   };
   seo: {
     siteName: string;

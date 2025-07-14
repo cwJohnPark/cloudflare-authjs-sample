@@ -14,9 +14,9 @@ export default async function LandingLayout({
   const session = await auth();
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Header dictionary={dictionary} session={session} />
-      <main className="page-transition">{children}</main>
-    </div>
+      <main>{children}</main>
+    </>
   );
 }

@@ -233,7 +233,13 @@
     "cancelled": "취소됨",
     "active": "활성",
     "expired": "만료됨",
-    "trial": "체험"
+    "trial": "체험",
+    "cancelSubscription": "구독 취소",
+    "confirmCancel": "정말로 구독을 취소하시겠습니까?",
+    "cancelConfirm": "구독 취소 확인",
+    "cancelMessage": "구독이 취소되면 현재 결제 기간 마지막까지 서비스를 이용할 수 있습니다.",
+    "subscriptionCancelled": "구독이 취소되었습니다",
+    "cancelFailed": "구독 취소에 실패했습니다"
   },
   "seo": {
     "siteName": "Aioneers",
