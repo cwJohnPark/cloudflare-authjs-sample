@@ -1,3 +1,4 @@
+import { setupLemonSqueezy } from "@/app/api/payments/setup";
 import { unauthorizedResponse } from "@/app/api/response";
 import { auth } from "@/app/auth/config";
 import logger from "@/lib/logger";
@@ -8,9 +9,11 @@ import {
   updateSubscription,
 } from "@lemonsqueezy/lemonsqueezy.js";
 import { NextRequest, NextResponse } from "next/server";
-import { setupLemonSqueezy } from "@/app/api/payments/setup";
+import {
+  cancelUserSubscription,
+  getSubscriptionBySubscriptionId,
+} from "./service";
 
-// Request body 타입 정의
 interface UpdateSubscriptionRequest {
   subscriptionId: string | number;
   action: "pause" | "resume" | "cancel" | "update";
@@ -19,10 +22,9 @@ interface UpdateSubscriptionRequest {
 }
 
 interface CancelSubscriptionRequest {
-  subscriptionId: string | number;
+  subscriptionId: string;
 }
 
-// 구독 목록 조회
 export async function GET(request: NextRequest) {
   try {
     const session = await auth();
@@ -35,7 +37,6 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const email = searchParams.get("email") || session.user.email;
 
-    // 사용자의 구독 목록 조회
     const { statusCode, error, data } = await listSubscriptions({
       filter: {
         userEmail: email,
@@ -70,12 +71,14 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// 구독 업데이트 (일시정지, 재개, 취소)
 export async function PATCH(request: NextRequest) {
   try {
     const session = await auth();
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "인증이 필요합니다" }, { status: 401 });
+      return NextResponse.json(
+        { error: "Authentication required" },
+        { status: 401 }
+      );
     }
 
     setupLemonSqueezy();
@@ -92,7 +95,6 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    // 먼저 구독이 사용자의 것인지 확인
     const {
       statusCode: getStatusCode,
       error: getError,
@@ -139,7 +141,7 @@ export async function PATCH(request: NextRequest) {
 
       default:
         return NextResponse.json(
-          { error: "지원하지 않는 액션입니다" },
+          { error: "Not supported action" },
           { status: 400 }
         );
     }
@@ -164,13 +166,13 @@ export async function PATCH(request: NextRequest) {
   }
 }
 
-// 구독 취소
 export async function DELETE(request: NextRequest) {
   try {
     const session = await auth();
-    if (!session?.user?.email) {
+    if (!session?.user?.id) {
       return unauthorizedResponse();
     }
+    const userId = session.user.id;
 
     setupLemonSqueezy();
 
@@ -184,42 +186,51 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // 구독이 사용자의 것인지 확인
-    const {
-      statusCode: getStatusCode,
-      error: getError,
-      data: subscriptionData,
-    } = await getSubscription(subscriptionId);
-
-    if (getError) {
-      logger.error("Subscription error:", getError);
-      return NextResponse.json(
-        { error: getError.message },
-        { status: getStatusCode || 500 }
-      );
+    const checkResult = await checkSubscription(subscriptionId, userId);
+    if (checkResult) {
+      return checkResult;
     }
 
-    if (subscriptionData?.data?.attributes?.user_email !== session.user.email) {
-      return NextResponse.json({ error: "Permission denied" }, { status: 403 });
-    }
+    const { statusCode, error } = await cancelSubscription(subscriptionId);
 
-    const { statusCode, error, data } =
-      await cancelSubscription(subscriptionId);
+    await cancelUserSubscription(subscriptionId, userId);
 
     if (error) {
       logger.error("Subscription cancel error:", error);
       return NextResponse.json(
-        { error: error.message },
+        { error: error.message || "Subscription cancel error" },
         { status: statusCode || 500 }
       );
     }
 
-    return NextResponse.json({
-      message: "Subscription cancel success",
-      subscription: data?.data,
-    });
+    return NextResponse.json({ message: "Subscription cancel success" });
   } catch (error) {
     logger.error("Subscription cancel error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
+
+const checkSubscription = async (subscriptionId: string, userId: string) => {
+  const { statusCode, error } = await getSubscription(subscriptionId);
+
+  if (error) {
+    logger.error(
+      `Subscription error: ${error.message}, statusCode: ${statusCode}`
+    );
+    return NextResponse.json(
+      { error: error.message },
+      { status: statusCode || 500 }
+    );
+  }
+
+  const userSubscription = await getSubscriptionBySubscriptionId(
+    subscriptionId,
+    userId
+  );
+
+  if (!userSubscription) {
+    return NextResponse.json({ error: "Permission denied" }, { status: 403 });
+  }
+
+  return null;
+};

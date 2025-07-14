@@ -11,7 +11,7 @@ import {
   UserSubscription,
   userSubscriptions,
 } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import logger from "@/lib/logger";
 
 export const saveSubscription = async (
@@ -105,6 +105,28 @@ export const saveUserSubscription = async (
   logger.debug("saveUserSubscription result:", result);
 };
 
+export const cancelUserSubscription = async (
+  subscriptionId: string,
+  userId: string
+): Promise<void> => {
+  const db = await drizzleAdapter();
+  const result = await db
+    .update(userSubscriptions)
+    .set({ status: "cancelled" })
+    .where(
+      and(
+        eq(userSubscriptions.subscription_id, subscriptionId),
+        eq(userSubscriptions.user_id, userId)
+      )
+    )
+    .returning();
+
+  logger.debug(
+    `cancelUserSubscription(subscriptionId=${subscriptionId}, userId=${userId}) result:`,
+    result
+  );
+};
+
 export const updateUserSubscription = async (
   subscriptionId: string,
   event: LemonSqueezyWebhookEvent
@@ -138,14 +160,20 @@ export const updateUserSubscription = async (
 };
 
 export const getSubscriptionBySubscriptionId = async (
-  subscriptionId: string
+  subscriptionId: string,
+  userId: string | null = null
 ): Promise<UserSubscription | null> => {
   const db = await drizzleAdapter();
 
   const result = await db
     .select()
     .from(userSubscriptions)
-    .where(eq(userSubscriptions.subscription_id, subscriptionId))
+    .where(
+      and(
+        eq(userSubscriptions.subscription_id, subscriptionId),
+        userId ? eq(userSubscriptions.user_id, userId) : undefined
+      )
+    )
     .limit(1);
 
   return result[0] || null;
