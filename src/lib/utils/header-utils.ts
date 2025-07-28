@@ -2,7 +2,16 @@ import { NextRequest } from "next/server";
 import { i18n } from "@/lib/i18n/i18n-config";
 
 export const getLocale = (request: NextRequest): string => {
-  // 1. Accept-Language 헤더에서 사용자의 선호 언어 추론
+  // 1. referer 헤더에서 사용자의 선호 언어 추론
+  const referer = request.headers.get("referer");
+  if (referer) {
+    const url = new URL(referer);
+    const pathname = url.pathname;
+    const locale = pathname.split("/")[1];
+    return locale;
+  }
+
+  // 2. Accept-Language 헤더에서 사용자의 선호 언어 추론
   const acceptLanguage = request.headers.get("accept-language");
 
   if (acceptLanguage) {

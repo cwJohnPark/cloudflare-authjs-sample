@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { i18n } from "@/lib/i18n/i18n-config";
-import {getLocale} from "@/lib/utils/header-utils";
+import { getLocale } from "@/lib/utils/header-utils";
 
 export default function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
@@ -8,6 +8,9 @@ export default function middleware(request: NextRequest) {
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
+
+  console.log("pathname", pathname);
+  console.log("pathnameIsMissingLocale", pathnameIsMissingLocale);
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {

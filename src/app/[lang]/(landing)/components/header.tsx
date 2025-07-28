@@ -54,8 +54,8 @@ export function Header({ dictionary, session }: HeaderProps) {
   // 딕셔너리를 사용한 네비게이션 아이템들
   const navigationItems: NavigationItem[] = [
     { label: dictionary.landing.navigation.home, href: "/" },
-    { label: dictionary.landing.navigation.product, href: "/product" },
-    { label: dictionary.landing.navigation.feature, href: "/feature" },
+    { label: dictionary.landing.navigation.product, href: "#" },
+    { label: dictionary.landing.navigation.feature, href: "#" },
     { label: dictionary.landing.navigation.pricing, href: "/pricing" },
   ];
 

@@ -233,7 +233,13 @@
     "cancelled": "キャンセル済み",
     "active": "アクティブ",
     "expired": "期限切れ",
-    "trial": "トライアル"
+    "trial": "トライアル",
+    "cancelSubscription": "サブスクリプションをキャンセル",
+    "confirmCancel": "サブスクリプションをキャンセルしてもよろしいですか？",
+    "cancelConfirm": "サブスクリプションキャンセル確認",
+    "cancelMessage": "キャンセル後、現在の請求期間の終了までサービスを継続してご利用いただけます。",
+    "subscriptionCancelled": "サブスクリプションが正常にキャンセルされました",
+    "cancelFailed": "サブスクリプションのキャンセルに失敗しました"
   },
   "seo": {
     "siteName": "Aioneers",

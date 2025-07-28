@@ -233,7 +233,13 @@
     "cancelled": "已取消",
     "active": "活跃",
     "expired": "已过期",
-    "trial": "试用"
+    "trial": "试用",
+    "cancelSubscription": "取消订阅",
+    "confirmCancel": "您确定要取消订阅吗？",
+    "cancelConfirm": "取消订阅确认",
+    "cancelMessage": "取消后，您可以继续使用服务直到当前计费期结束。",
+    "subscriptionCancelled": "订阅已成功取消",
+    "cancelFailed": "取消订阅失败"
   },
   "seo": {
     "siteName": "Aioneers",

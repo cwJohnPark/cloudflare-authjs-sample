@@ -233,7 +233,13 @@
     "cancelled": "Cancelado",
     "active": "Activo",
     "expired": "Expirado",
-    "trial": "Prueba"
+    "trial": "Prueba",
+    "cancelSubscription": "Cancelar Suscripción",
+    "confirmCancel": "¿Está seguro de que desea cancelar su suscripción?",
+    "cancelConfirm": "Confirmación de Cancelación de Suscripción",
+    "cancelMessage": "Después de la cancelación, puede continuar usando el servicio hasta el final de su período de facturación actual.",
+    "subscriptionCancelled": "Suscripción cancelada exitosamente",
+    "cancelFailed": "Error al cancelar la suscripción"
   },
   "seo": {
     "siteName": "Aioneers",

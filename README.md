@@ -9,13 +9,19 @@ This project is an authentication system boilerplate using Auth.js (NextAuth) on
 - **React 19**
 - **Tailwind CSS 3**
 - **Cloudflare D1** (Serverless Relational Database)
+- **Cloudflare Turnstile** (Bot Protection)
+- **Lemon Squeezy** (Payment Processing)
+- **i18n** (Internationalization)
 - **Wrangler**
 
 ## Features
 
 - User authentication storage using Cloudflare D1 database
 - Email authentication (magic link) using Resend
-- Apple, Google OAuth authentication
+- Google OAuth authentication
+- Cloudflare Turnstile bot protection integration
+- Lemon Squeezy payment processing and subscription management
+- Multi-language support with i18n (English, Korean, Japanese, Spanish, Chinese)
 - Cloudflare deployment optimization with Open NextJS
 - Responsive dashboard UI with shadcn components
 - TypeScript support
@@ -61,6 +67,10 @@ AUTH_EMAIL_FROM="no-reply@yourdomain.com"
 AUTH_URL="http://localhost:8787/"
 AUTH_GOOGLE_ID="Google OAuth Client ID"
 AUTH_GOOGLE_SECRET="Google OAuth Client Secret"
+NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY="Cloudflare Turnstile Site Key"
+CLOUDFLARE_TURNSTILE_SECRET_KEY="Cloudflare Turnstile Secret Key"
+LEMON_SQUEEZY_API_KEY="Lemon Squeezy API Key"
+LEMON_SQUEEZY_WEBHOOK_SIGNING_KEY="Lemon Squeezy Webhook Secret"
 ```
 
 **Environment Variables Explanation:**
@@ -70,6 +80,10 @@ AUTH_GOOGLE_SECRET="Google OAuth Client Secret"
 - `AUTH_EMAIL_FROM`: Sender email address for authentication emails.
 - `AUTH_URL`: Local URL for development, deployed domain URL for production.
 - `AUTH_GOOGLE_ID/SECRET`: OAuth credentials from respective consoles. [AuthJS Google Provider](https://authjs.dev/getting-started/providers/google)
+- `NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY`: Public site key for Cloudflare Turnstile bot protection. [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/)
+- `CLOUDFLARE_TURNSTILE_SECRET_KEY`: Secret key for Cloudflare Turnstile server-side verification.
+- `LEMON_SQUEEZY_API_KEY`: API key for Lemon Squeezy payment processing. [Lemon Squeezy API](https://docs.lemonsqueezy.com/api)
+- `LEMON_SQUEEZY_WEBHOOK_SIGNING_KEY`: Webhook secret for Lemon Squeezy payment events.
   **Note**: For Cloudflare Workers deployment, you'll also need to configure these same variables in your Cloudflare dashboard or use `.dev.vars` for local development with Wrangler.
 
 ### 5. Modify wrangler.jsonc File
@@ -118,14 +132,33 @@ npm run deploy
 ### Multi-Provider Authentication
 
 - **Google OAuth**: One-click login with Google account
-- **Apple OAuth**: One-click login with Apple ID
 - **Email (Resend)**: Magic link authentication via email
+- **Cloudflare Turnstile**: Bot protection for authentication forms
 
 ### Session Management
 
 - Custom session provider for global session state
 - Server-side session validation
 - Automatic redirect based on authentication status
+
+## Internationalization (i18n)
+
+### Multi-Language Support
+
+- **Supported Languages**: English, Korean, Japanese, Spanish, Chinese
+- **Dynamic Language Switching**: Real-time language switching without page reload
+- **URL-based Localization**: Language-specific URLs (e.g., `/en/dashboard`, `/ko/dashboard`)
+- **Automatic Language Detection**: Browser language preference detection
+- **Localized Content**: All UI elements, messages, and content are fully localized
+
+## Payment Processing
+
+### Lemon Squeezy Integration
+
+- **Subscription Management**: Handle subscription creation, updates, and cancellations
+- **Payment Processing**: Secure payment processing with webhook support
+- **Billing Dashboard**: User-friendly billing interface with subscription details
+- **Webhook Handling**: Real-time payment event processing
 
 ## Database Migration
 
@@ -139,6 +172,8 @@ The dashboard includes:
 - **Data Tables**: Advanced tables with sorting, filtering, and pagination
 - **Responsive Sidebar**: Collapsible navigation with user profile
 - **Cards Section**: Overview cards with key metrics
+- **Billing Management**: Subscription and payment management interface
+- **Language Switcher**: Multi-language support with language selection dropdown
 - **Modern UI**: Built with shadcn/ui components
 
 ## Development Notes
@@ -150,6 +185,15 @@ During development, you can only send testing emails to your own email address. 
 ### D1 Local Development
 
 Calling `GET /api/setup` produces the local D1 database at `.wrangler/state/v3/d1/miniflare-D1DatabaseObject`.
+
+### i18n Configuration
+
+The project uses Next.js App Router internationalization with the following structure:
+
+- Language dictionaries are located in `src/lib/i18n/dictionaries/`
+- Supported languages: `en`, `ko`, `ja`, `es`, `zh`
+- URL structure: `/[lang]/[route]` (e.g., `/en/dashboard`, `/ko/settings`)
+- Language switcher component available in the navigation
 
 ## Contributing
 

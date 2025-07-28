@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@auth/core':
+        specifier: ^0.40.0
+        version: 0.40.0
       '@auth/d1-adapter':
         specifier: ^1.9.1
         version: 1.10.0
